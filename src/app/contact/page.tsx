@@ -147,7 +147,7 @@ export default function Contact() {
                   Our Office
                 </h4>
                 <p className="text-gray-500 text-sm mt-1">
-                  Harare, Zimbabwe. Available for on-site consultations.
+                  13 Brentwood Avenue, Mount Pleasant, Harare, Zimbabwe
                 </p>
               </div>
             </div>

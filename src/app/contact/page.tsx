@@ -115,7 +115,7 @@ export default function Contact() {
                   className="w-full border-b border-gray-300 py-4 focus:border-[#F3764A] outline-none transition-colors bg-transparent resize-none"
                 ></textarea>
 
-                <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#013d57] transition-all font-semibold hover:cursor-pointer">
+                <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-semibold hover:cursor-pointer">
                   Send Now <Send size={18} className="text-[#F3764A]" />
                 </button>
               </motion.form>

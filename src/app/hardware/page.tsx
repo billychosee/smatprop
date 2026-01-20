@@ -54,32 +54,38 @@ export default function Hardware() {
 
       {/* Core Hardware Grid */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Changed from grid to flex flex-wrap justify-center */}
+        <div className="flex flex-wrap justify-center gap-12">
           {[
             {
               title: "Smart Water Meters",
               desc: "Monitor water usage efficiently with remote ultrasonic sensing.",
               icon: <Droplets size={32} />,
+              image: "/smart-water-meters.png",
             },
             {
               title: "Smart Electricity Meters",
               desc: "Track consumption in real-time with automated billing triggers.",
               icon: <Zap size={32} />,
+              image: "/smart-electricity-meters.png",
             },
             {
               title: "Access Control Systems",
               desc: "Cloud-based entry management for residential and commercial hubs.",
               icon: <ShieldCheck size={32} />,
+              image: "/access-control.png",
             },
             {
               title: "CCTV Systems",
               desc: "High-definition AI surveillance with motion detection alerts.",
               icon: <Video size={32} />,
+              image: "/cctv-systems.png",
             },
             {
               title: "Biometric Devices",
               desc: "Next-gen fingerprint and facial recognition for secure zones.",
               icon: <Fingerprint size={32} />,
+              image: "/biometric-devices.png",
             },
           ].map((item, idx) => (
             <motion.div
@@ -88,7 +94,8 @@ export default function Hardware() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="flex flex-col items-center text-center p-8 border border-gray-100 rounded-[40px] hover:shadow-xl transition-all bg-white group"
+              // Added responsive widths: 100% on mobile, ~48% on tablet, ~30% on desktop
+              className="flex flex-col items-center text-center p-8 border border-gray-100 rounded-[40px] hover:shadow-xl transition-all bg-white group w-full md:w-[calc(50%-24px)] lg:w-[calc(33.333%-32px)]"
             >
               <div className="w-20 h-20 bg-[#F4F0EC] rounded-full flex items-center justify-center text-[#F3764A] mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
                 {item.icon}
@@ -96,7 +103,12 @@ export default function Hardware() {
               <h3 className="text-2xl font-serif text-secondary mb-4">
                 {item.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              <p className="text-gray-600 leading-relaxed mb-6">{item.desc}</p>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-40 object-cover rounded-lg"
+              />
             </motion.div>
           ))}
         </div>
@@ -177,7 +189,7 @@ export default function Hardware() {
           Our hardware solutions integrate seamlessly with the SmatProp
           dashboard for a unified management experience.
         </p>
-        <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 mx-auto shadow-lg hover:bg-[#013d57] transition-all hover:cursor-pointer">
+        <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 mx-auto shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
           Request a Hardware Demo{" "}
           <ArrowRight size={20} className="text-[#F3764A]" />
         </button>

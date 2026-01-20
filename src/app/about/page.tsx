@@ -155,7 +155,7 @@ export default function About() {
           </div>
 
           <div className="mt-16 text-center">
-            <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 mx-auto shadow-lg hover:bg-[#013d57] transition-all hover:cursor-pointer">
+            <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 mx-auto shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
               Learn About Our Solution{" "}
               <ArrowRight size={20} className="text-[#F3764A]" />
             </button>

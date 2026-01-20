@@ -138,6 +138,23 @@ export default function Features() {
         </div>
       </section>
 
+      {/* Multi-Device Access Section */}
+      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-serif text-secondary mb-4">
+            Accessible on All Devices
+          </h2>
+          <div className="w-24 h-1 bg-[#F3764A] mx-auto"></div>
+        </div>
+        <div className="flex justify-center">
+          <img
+            src="/devices.png"
+            alt="SmatProp on Tablet, PC, and Phone"
+            className="max-w-full h-auto"
+          />
+        </div>
+      </section>
+
       {/* Star Features Section (Alternate Layout) */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-serif text-secondary text-center mb-20">

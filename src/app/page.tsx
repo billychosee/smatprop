@@ -15,6 +15,15 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const PAYMENT_METHODS = [
+  { name: "Ecocash", src: "/Ecocash.svg" },
+  { name: "Omari", src: "/omari.svg" },
+  { name: "Mastercard", src: "/mastercard.svg" },
+  { name: "Zimswitch", src: "/zimswitch.svg" },
+  { name: "Visa", src: "/visa.svg" },
+  { name: "Innbucks", src: "/innbucks.svg" },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
@@ -116,8 +125,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="rounded-tl-[150px] rounded-br-[150px] overflow-hidden shadow-2xl relative">
             <img
-              src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop"
-              alt="Hardware Tech"
+              src="/biometric-devices.png"
+              alt="Biometric Devices"
               className="w-full h-125 object-cover"
             />
             <div className="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-[#F3764A]">
@@ -151,11 +160,40 @@ export default function Home() {
               ))}
             </ul>
             <Link href="/hardware">
-              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-[#013d57] transition-all hover:cursor-pointer">
+              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
                 Explore Hardware{" "}
                 <ArrowRight size={20} className="text-[#F3764A]" />
               </button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 ">
+        <div className="container px-6 mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="mb-6 text-4xl font-bold">
+              Available Payment Methods
+            </h2>
+            <p className="mb-16 text-lg text-slate-400">
+              We support all major payment methods in Zimbabwe, making it easy
+              for your audience to support your creativity.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+              {PAYMENT_METHODS.map((method) => (
+                <motion.div
+                  key={method.name}
+                  className="flex items-center justify-center transition-all group"
+                >
+                  <img
+                    src={method.src}
+                    alt={method.name}
+                    className="w-full h-full max-w-37.5 md:max-w-50 object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -172,7 +210,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link href="/contact">
-              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:opacity-90 transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
+              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                 Get a Quote <ArrowRight size={18} className="text-[#F3764A]" />
               </button>
             </Link>

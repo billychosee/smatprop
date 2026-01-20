@@ -117,16 +117,23 @@ export default function Navbar() {
             className="fixed inset-0 h-screen w-full bg-white z-40 md:hidden flex flex-col justify-center items-center"
           >
             <div className="flex flex-col items-center space-y-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-4xl font-serif text-secondary hover:text-[#F3764A] transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-4xl font-serif transition-colors ${
+                      isActive
+                        ? "text-[#F3764A]"
+                        : "text-secondary hover:text-[#F3764A]"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <Link
                 href="tel:+2638688008361"
                 onClick={() => setIsOpen(false)}

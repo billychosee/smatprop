@@ -2,15 +2,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ArrowRight,
-  CheckCircle2,
   Home,
   Users,
   Wallet,
-  ShieldCheck,
   BarChart3,
   Search,
+  Wrench,
+  ClipboardCheck,
+  CreditCard,
+  Phone,
+  LayoutDashboard,
+  ShieldAlert,
+  Zap,
+  Briefcase,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,14 +34,14 @@ export default function Features() {
         <div className="border-r border-gray-100/50"></div>
       </div>
 
-      {/* Hero Header Section */}
+      {/* 1. HERO HEADER - IMAGE FIX APPLIED */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-112.5 flex items-center justify-center">
-          <div className="absolute inset-0 z-0 opacity-30">
+          <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
-              alt="Luxury Living"
-              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+              alt="Modern Architecture Background"
+              className="w-full h-full object-cover opacity-40"
             />
           </div>
           <div className="relative z-10 text-center text-white px-4">
@@ -52,183 +59,242 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Who It's For - Icon Grid */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif text-secondary mb-4">
-            Who It&apos;s For
-          </h2>
-          <div className="w-24 h-1 bg-[#F3764A] mx-auto"></div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {/* 2. CREATIVE FEATURE SUITES (THE 6 ITEMS) */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            "Real Estate Agents",
-            "Landlords",
-            "Property Managers",
-            "Tenants",
-            "Vendors",
-            "Service Providers",
-          ].map((audience, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#F4F0EC] p-6 rounded-2xl text-center border border-transparent hover:border-[#F3764A] transition-all"
+            {
+              title: "Property & Unit",
+              icon: <Home size={24} />,
+              img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+              features: [
+                "Property database & categorization",
+                "Unit-level details (size, amenities)",
+                "Floor plans & virtual tours",
+                "Availability & unit assignment",
+              ],
+            },
+            {
+              title: "Tenant & Lease",
+              icon: <Users size={24} />,
+              img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop",
+              features: [
+                "Digital agreement signing",
+                "Automated rent reminders",
+                "Onboarding & Check-in/out",
+                "Lease creation & tracking",
+              ],
+            },
+            {
+              title: "Financials",
+              icon: <Wallet size={24} />,
+              img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop",
+              features: [
+                "Mobile money & card processing",
+                "Security deposit management",
+                "Automated late fee calculation",
+                "Tax compliance fiscalization",
+              ],
+            },
+            {
+              title: "Reporting",
+              icon: <BarChart3 size={24} />,
+              img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
+              features: [
+                "Income & expense tracking",
+                "Budgeting & forecasting",
+                "Exportable cash flow reports",
+                "Real-time analytics dashboard",
+              ],
+            },
+            {
+              title: "Maintenance",
+              icon: <Wrench size={24} />,
+              img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop",
+              features: [
+                "Request submission portal",
+                "Automated contractor assignment",
+                "Preventive scheduling",
+                "Work order status tracking",
+              ],
+            },
+            {
+              title: "Market & Security",
+              icon: <Search size={24} />,
+              img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop",
+              features: [
+                "Centralized verified listings",
+                "Multi-factor authentication",
+                "Role-based access & audits",
+                "Listing performance analytics",
+              ],
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="group bg-white border border-gray-100 rounded-[40px] overflow-hidden hover:shadow-2xl transition-all duration-500"
             >
-              <p className="text-secondary font-bold text-sm md:text-base leading-tight">
-                {audience}
-              </p>
-            </motion.div>
+              <div className="h-48 overflow-hidden relative">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4 bg-white p-3 rounded-2xl text-[#F3764A] shadow-lg">
+                  {item.icon}
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-serif text-secondary mb-4">
+                  {item.title}
+                </h3>
+                <ul className="space-y-2">
+                  {item.features.map((f, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2 text-sm text-gray-500"
+                    >
+                      <Zap size={14} className="mt-1 text-[#F3764A] shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Key Features Grid */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 md:px-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-secondary text-center mb-16">
-            Key Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* 3. STAR FEATURES (DEDICATED SECTION) */}
+      <section className="py-24 px-4 bg-secondary relative z-10 text-white rounded-[50px] mx-4 max-w-7xl lg:mx-auto overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#F3764A] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+
+        <div className="relative z-10 px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-6">
+            <div className="max-w-xl">
+              <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+                Exclusive Capabilities
+              </p>
+              <h2 className="text-4xl md:text-5xl font-serif">Star Features</h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             {[
               {
-                title: "Property Management",
-                icon: <Home />,
-                desc: "Database, categorization, and tracking.",
+                title: "Integrated payment gateway",
+                desc: "Secure, native processing for mobile money, cards, and bank transfers.",
+                icon: <CreditCard size={32} />,
+                num: "01",
               },
               {
-                title: "Tenant & Lease",
-                icon: <Users />,
-                desc: "Profiles, creation, and auto-reminders.",
+                title: "Rental credit vetting and profiling",
+                desc: "Advanced tenant background checks and financial risk assessment.",
+                icon: <LayoutDashboard size={32} />,
+                num: "02",
               },
               {
-                title: "Financials",
-                icon: <Wallet />,
-                desc: "Invoicing, payments, and reconciliation.",
+                title: "Eviction support and compliance tracking",
+                desc: "Digital legal workflows and automated compliance documentation.",
+                icon: <ShieldAlert size={32} />,
+                num: "03",
               },
               {
-                title: "Reporting",
-                icon: <BarChart3 />,
-                desc: "Dashboards, trends, and data exports.",
+                title: "Entrance and exit inspection checklists",
+                desc: "High-fidelity digital reports to eliminate property damage disputes.",
+                icon: <ClipboardCheck size={32} />,
+                num: "04",
               },
               {
-                title: "Security",
-                icon: <ShieldCheck />,
-                desc: "Role-based access and audit trails.",
+                title: "Vendor management system",
+                desc: "Centralized database and assignment tool for property service providers.",
+                icon: <Briefcase size={32} />,
+                num: "05",
               },
-              {
-                title: "Marketing",
-                icon: <Search />,
-                desc: "Verified listings and engagement tools.",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="bg-white p-8 rounded-[30px] shadow-sm flex flex-col items-start gap-4"
-              >
-                <div className="text-[#F3764A]">{feature.icon}</div>
-                <h3 className="text-xl font-serif text-secondary">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{feature.desc}</p>
-              </motion.div>
+            ].map((item, i) => (
+              <div key={i} className="flex gap-8 group">
+                <span className="text-5xl font-serif text-white/10 group-hover:text-[#F3764A]/20 transition-colors duration-500">
+                  {item.num}
+                </span>
+                <div>
+                  <div className="text-[#F3764A] mb-4">{item.icon}</div>
+                  <h4 className="text-2xl font-serif mb-3">{item.title}</h4>
+                  <p className="text-white/60 leading-relaxed text-sm max-w-md">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Multi-Device Access Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif text-secondary mb-4">
-            Accessible on All Devices
-          </h2>
-          <div className="w-24 h-1 bg-[#F3764A] mx-auto"></div>
-        </div>
-        <div className="flex justify-center">
-          <img
-            src="/devices.png"
-            alt="SmatProp on Tablet, PC, and Phone"
-            className="max-w-full h-auto"
-          />
-        </div>
-      </section>
-
-      {/* Star Features Section (Alternate Layout) */}
+      {/* 4. MULTI-DEVICE SECTION */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-serif text-secondary text-center mb-20">
-          Star Features
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
-          {[
-            {
-              title: "Payment Gateways",
-              desc: "Accept payments instantly through multiple channels.",
-            },
-            {
-              title: "Smart Metering",
-              desc: "Real-time energy monitoring and billing transparency.",
-            },
-            {
-              title: "Entrance Checklist",
-              desc: "Digital condition reports to reduce tenant disputes.",
-            },
-            {
-              title: "Smart Access",
-              desc: "QR code secure entry and instant notifications.",
-            },
-          ].map((star, index) => (
-            <motion.div
-              key={index}
-              className="flex gap-6 border-b border-gray-100 pb-8"
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            >
-              <span className="text-4xl font-serif text-[#F4F0EC] text-outline">
-                0{index + 1}
-              </span>
-              <div>
-                <h3 className="text-2xl font-serif text-secondary mb-2">
-                  {star.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{star.desc}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
+              Accessible on <br /> All Your Devices
+            </h2>
+            <p className="text-gray-600 text-lg mb-8">
+              Whether you are on the field with a smartphone, in the office on a
+              PC, or conducting inspections on a tablet, SmatProp remains
+              synchronized in real-time.
+            </p>
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-secondary">100%</div>
+                <div className="text-xs text-[#F3764A] uppercase font-bold tracking-widest">
+                  Cloud Sync
+                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Why SmatProp - Final Impact Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto mb-20">
-        <div className="relative overflow-hidden rounded-[50px] bg-secondary p-12 md:p-20 text-white">
-          <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+              <div className="h-10 w-px bg-gray-200"></div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-secondary">Offline</div>
+                <div className="text-xs text-[#F3764A] uppercase font-bold tracking-widest">
+                  Support
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-              className="object-cover h-full"
-              alt=""
+              src="/devices.png"
+              alt="Device Dashboard"
+              className="max-w-full h-auto"
             />
           </div>
-          <div className="relative z-10 max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-serif mb-12">
-              Why SmatProp?
+        </div>
+      </section>
+
+      {/* 5. CONTACT CTA */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
+              Ready for Smarter <br /> Management?
             </h2>
-            <div className="space-y-6">
-              {[
-                "Streamlined Operations & Automation",
-                "Real-time Data Insights & Dashboards",
-                "Enhanced Tenant Experience",
-                "Significant Cost & Time Savings",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <CheckCircle2 className="text-[#F3764A]" size={24} />
-                  <span className="text-lg opacity-90">{text}</span>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+              <Link href="/contact">
+                <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
+                  Get Started{" "}
+                  <ArrowRight size={18} className="text-[#F3764A]" />
+                </button>
+              </Link>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-[#F3764A] shadow-md">
+                  <Phone size={24} />
                 </div>
-              ))}
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 uppercase font-bold tracking-widest">
+                    Call us
+                  </p>
+                  <p className="font-bold text-secondary text-xl tracking-tighter">
+                    (+263) 86 8800
+                  </p>
+                </div>
+              </div>
             </div>
-            <button className="mt-12 bg-[#F3764A] text-white px-8 py-4 rounded-2xl flex items-center gap-2 hover:brightness-110 transition-all font-semibold hover:cursor-pointer">
-              Get Started Now <ArrowRight size={20} />
-            </button>
           </div>
         </div>
       </section>

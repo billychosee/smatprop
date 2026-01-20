@@ -2,13 +2,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ArrowRight,
-  BarChart3,
-  Clock,
-  Wallet,
-  ShieldCheck,
-  Search,
+  Target,
+  Eye,
+  Settings,
+  Cpu,
+  Users,
+  CheckCircle2,
+  Phone,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,13 +28,13 @@ export default function About() {
         <div className="border-r border-gray-100/50"></div>
       </div>
 
-      {/* Hero Header Section */}
+      {/* 1. HERO HEADER SECTION - UPDATED IMAGE */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-100 flex items-center justify-center">
-          <div className="absolute inset-0 z-0 opacity-30">
+          <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-              alt="Modern Office"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+              alt="Black CEO leading a strategy session"
               className="w-full h-full object-cover"
             />
           </div>
@@ -41,124 +44,223 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-serif mb-4"
             >
-              The Facts
+              About SmatProp
             </motion.h1>
             <p className="text-[#F3764A] font-semibold tracking-widest uppercase">
-              Inside SmatProp&apos;s Mission
+              Inside Our Mission & Vision
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats/Facts Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-          <div>
+      {/* 2. NARRATIVE & MISSION SECTION - UPDATED IMAGE */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 items-stretch">
+          <div className="lg:w-1/2 relative flex">
+            <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-[#F4F0EC] w-full min-h-full">
+              <img
+                src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=1974&auto=format&fit=crop"
+                alt="Professional Black woman using digital tablet"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="lg:w-1/2 flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Understanding the <br /> African Market
+              Modernizing Real Estate <br /> Across Africa
+            </h2>
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-10">
+              <p>
+                SmatProp is a comprehensive property management solution created
+                to modernize real estate operations across Africa. As
+                urbanization, diaspora investment, and real estate development
+                continue to grow, property stakeholders require tools that
+                improve efficiency, transparency, and trust.
+              </p>
+              <p>
+                SmatProp bridges this gap by delivering an integrated digital
+                ecosystem that simplifies property management while improving
+                tenant–landlord relationships.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="bg-[#F4F0EC] p-8 rounded-[30px] flex flex-col justify-between border-l-4 border-[#F3764A]">
+                <div>
+                  <Target className="text-[#F3764A] mb-4" size={32} />
+                  <h4 className="font-serif text-xl text-secondary mb-2">
+                    Mission
+                  </h4>
+                  <p className="text-sm opacity-70 italic">
+                    To simplify property management by delivering smart,
+                    reliable, and scalable digital solutions that empower
+                    landlords, property managers, and tenants.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-secondary p-8 rounded-[30px] text-white flex flex-col justify-between">
+                <div>
+                  <Eye className="text-[#F3764A] mb-4" size={32} />
+                  <h4 className="font-serif text-xl mb-2">Vision</h4>
+                  <p className="text-sm opacity-60 italic">
+                    To become Africa’s leading digital property management
+                    ecosystem, enabling smarter properties, sustainable
+                    operations, and data-driven decision-making.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WHAT WE DO PILLARS */}
+      <section className="py-24 px-4 bg-[#F4F0EC]/50 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif text-secondary">
+              A Holistic Approach
+            </h2>
+            <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-lg">
+              SmatProp provides specialized solutions tailored to different
+              property types, portfolio sizes, and operational needs.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Prop-Software",
+                desc: "Cloud-based property management software for complete digital automation.",
+                icon: <Settings size={28} />,
+                img: "https://images.unsplash.com/photo-1573163281534-dd1a841d8d14?q=80&w=2070&auto=format&fit=crop",
+              },
+              {
+                title: "Hardware Integration",
+                desc: "Smart property hardware integrations including access control and metering.",
+                icon: <Cpu size={28} />,
+                img: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=2070&auto=format&fit=crop",
+              },
+              {
+                title: "Advisory Services",
+                desc: "Expert consultancy services to help you optimize and scale your real estate operations.",
+                icon: <Users size={28} />,
+                img: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=2070&auto=format&fit=crop",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-[40px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-gray-100"
+              >
+                <div className="h-56 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-[#F3764A]">{item.icon}</div>
+                    <h3 className="text-xl font-serif text-secondary">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. OUR DIFFERENCE */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+              The SmatProp Advantage
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-10 leading-tight">
+              What Makes Us <br /> Different
             </h2>
             <div className="space-y-8">
               {[
                 {
-                  icon: <BarChart3 className="text-[#F3764A]" />,
-                  title: "Manual Processes",
-                  text: "80% of property managers in Africa struggle with manual processes and lack of automation.",
+                  title: "Built with African Markets in Mind",
+                  text: "Localized for the specific economic and urban landscapes of Africa.",
                 },
                 {
-                  icon: <Clock className="text-[#F3764A]" />,
-                  title: "Administrative Time",
-                  text: "Managers spend an average of 20 hours per month on routine administrative tasks.",
+                  title: "Designed for Real Challenges",
+                  text: "Software features that target actual day-to-day operational friction.",
                 },
                 {
-                  icon: <Wallet className="text-[#F3764A]" />,
-                  title: "Late Payments",
-                  text: "60% of property managers report late rent payments due to inefficient collection.",
+                  title: "Integrated Smart Hardware",
+                  text: "Seamless connectivity with smart access and ultrasonic metering hardware.",
                 },
-              ].map((fact, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="flex gap-4"
-                >
-                  <div className="shrink-0 w-12 h-12 bg-[#F4F0EC] rounded-full flex items-center justify-center">
-                    {fact.icon}
+                {
+                  title: "Flexible, Modular & Scalable",
+                  text: "A system that grows effortlessly with your property portfolio.",
+                },
+              ].map((diff, i) => (
+                <div key={i} className="flex gap-4 group">
+                  <div className="mt-1 shrink-0">
+                    <CheckCircle2 className="text-[#F3764A]" size={22} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-secondary">
-                      {fact.title}
+                    <h4 className="font-bold text-secondary text-lg mb-1 group-hover:text-[#F3764A] transition-colors">
+                      {diff.title}
                     </h4>
-                    <p className="text-gray-600">{fact.text}</p>
+                    <p className="text-gray-500 leading-relaxed">{diff.text}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-
           <div className="relative">
-            <div className="rounded-tr-[150px] rounded-bl-[150px] overflow-hidden shadow-2xl border-8 border-white">
-              <img
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop"
-                alt="Architecture"
-                className="w-full h-150 object-cover"
-              />
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+              alt="Black tech professionals discussing software architecture"
+              className="rounded-tl-[150px] rounded-br-[150px] shadow-2xl h-150 w-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* The Dilemma Section (The Beige Block) */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 md:px-16">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-6">
-              The Property Management Dilemma
+      {/* 5. CONTACT CTA */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
+              Let&apos;s Modernize <br /> Your Property
             </h2>
-            <p className="text-lg text-gray-600">
-              Africa&apos;s property sector is undergoing rapid growth, yet
-              persistent challenges limit efficiency. We are here to bridge
-              those gaps.
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+              Whether you manage a single apartment or a nationwide portfolio,
+              SmatProp provides the tools you need to scale efficiently.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Security Gaps",
-                desc: "Vulnerabilities in property security and delayed repairs.",
-                icon: <ShieldCheck size={30} className="text-[#F3764A]" />,
-              },
-              {
-                title: "Operational Slumps",
-                desc: "Overall slowdown in property management operations.",
-                icon: <BarChart3 size={30} className="text-[#F3764A]" />,
-              },
-              {
-                title: "Tenant Challenges",
-                desc: "70% of seekers face difficulties finding reliable property listings.",
-                icon: <Search size={30} className="text-[#F3764A]" />,
-              },
-            ].map((issue, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[30px] shadow-sm text-center flex flex-col items-center"
-              >
-                <div className="mb-6">{issue.icon}</div>
-                <h3 className="text-xl font-serif text-secondary mb-4">
-                  {issue.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{issue.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 mx-auto shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
-              Learn About Our Solution{" "}
-              <ArrowRight size={20} className="text-[#F3764A]" />
-            </button>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+              <Link href="/contact">
+                <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
+                  Get a Quote{" "}
+                  <ArrowRight size={18} className="text-[#F3764A]" />
+                </button>
+              </Link>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-[#F3764A] shadow-md">
+                  <Phone size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-gray-400 uppercase font-bold tracking-widest">
+                    Call us
+                  </p>
+                  <p className="font-bold text-secondary text-xl tracking-tighter">
+                    (+263) 86 8800
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

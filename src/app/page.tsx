@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useMemo } from "react";
 import {
   ArrowRight,
   Phone,
@@ -31,7 +32,52 @@ const PAYMENT_METHODS = [
   { name: "Innbucks", src: "/innbucks.svg" },
 ];
 
+const CLIENTS = [
+  {
+    name: "Ntiyiso",
+    src: "/clients-logos/ntiyiso_logo.svg",
+  },
+  {
+    name: "Robert Root",
+    src: "/clients-logos/robertroot_logo.png",
+  },
+  {
+    name: "Sasseta",
+    src: "/clients-logos/sasseta_logo.svg",
+  },
+  {
+    name: "Services SETA",
+    src: "/clients-logos/services_seta_logo.svg",
+  },
+  {
+    name: "Sharetek",
+    src: "/clients-logos/sharetek_logo.svg",
+  },
+  {
+    name: "Smat QR",
+    src: "/clients-logos/smat_qr_logo.svg",
+  },
+  {
+    name: "Smat Tutor",
+    src: "/clients-logos/smat_tutor_logo.svg",
+  },
+  {
+    name: "Smat Ech",
+    src: "/clients-logos/smatech_logo.svg",
+  },
+  {
+    name: "Smat Pay",
+    src: "/clients-logos/smatpay_logo.svg",
+  },
+];
+
 export default function Home() {
+  const shuffledClients = useMemo(
+    // eslint-disable-next-line react-hooks/purity
+    () => [...CLIENTS].sort(() => Math.random() - 0.5),
+    [],
+  );
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -43,38 +89,75 @@ export default function Home() {
         <div className="border-r border-gray-100/50"></div>
       </div>
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-6 pb-20 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary">
-          <div className="absolute inset-0 z-0 opacity-40">
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-              alt="Modern Office"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="relative z-10 py-32 px-8 md:px-20 max-w-4xl text-white">
+      {/* --- COMPACT HERO SECTION --- */}
+      <section className="relative pt-24 md:pt-28 pb-4 px-4 max-w-7xl mx-auto z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-[40px] bg-secondary lg:h-130 xl:h-145 shadow-2xl">
+          {/* LEFT CONTENT: Minimized padding for laptop fit */}
+          <div className="lg:col-span-7 flex flex-col justify-center p-6 md:p-10 xl:p-24 relative z-20">
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-serif leading-tight mb-6"
+              className="text-3xl md:text-5xl xl:text-6xl font-serif text-white leading-[1.1] mb-3"
             >
-              Smart Property Management Software Built for Africa
+              Intelligence <br />
+              <span className="text-[#F3764A]">Behind Every Asset.</span>
             </motion.h1>
-            <p className="text-lg mb-8 max-w-2xl opacity-90 leading-relaxed">
-              SmatProp is a smart, digital-first property management platform
-              designed to simplify property operations, automate financial
-              processes, enhance security, and improve communication between
-              landlords, property managers, tenants, and service providers.
-            </p>
-            <Link href="/about">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#F3764A] text-white px-8 py-4 rounded-2xl flex items-center gap-2 font-semibold shadow-lg hover:cursor-pointer"
-              >
-                Our Story <ArrowRight size={20} />
-              </motion.button>
-            </Link>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-gray-300 text-xs md:text-sm xl:text-base mb-5 xl:mb-7 max-w-md leading-relaxed"
+            >
+              SmatProp bridges the gap between manual operations and digital
+              excellence, offering African property owners a unified platform
+              for finances, security, and tenant relations.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col gap-4"
+            >
+              <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
+                <button className="bg-[#F3764A] text-white px-6 py-3 xl:px-8 xl:py-4 rounded-xl flex items-center w-fit gap-2 font-bold shadow-lg hover:bg-[#e26539] transition-all text-sm xl:text-base">
+                  Request Live Demo <ArrowRight size={18} />
+                </button>
+              </Link>
+
+              {/* Tightened Stats Row */}
+              <div className="flex gap-8 pt-4 mt-2 border-t border-white/10 w-full max-w-xs">
+                <div>
+                  <p className="text-[#F3764A] text-lg xl:text-2xl font-bold">
+                    15%
+                  </p>
+                  <p className="text-gray-400 text-[8px] xl:text-[9px] uppercase tracking-widest font-semibold">
+                    Revenue Recovery
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[#F3764A] text-lg xl:text-2xl font-bold">
+                    24/7
+                  </p>
+                  <p className="text-gray-400 text-[8px] xl:text-[9px] uppercase tracking-widest font-semibold">
+                    Digital Security
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* RIGHT IMAGE */}
+          <div className="lg:col-span-5 relative min-h-75 lg:min-h-full">
+            <img
+              src="/home-hero.png"
+              className="absolute inset-0 w-full h-full object-cover"
+              alt="Hero Image"
+            />
+            <div className="absolute inset-0 bg-linear-to-r from-secondary/40 lg:from-transparent to-transparent" />
+
+
           </div>
         </div>
       </section>
@@ -115,8 +198,8 @@ export default function Home() {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop"
-              alt="Management Solutions"
+              src="/the-challenge.jpg"
+              alt="Reviewing data"
               className="rounded-[60px] shadow-2xl w-full h-125 object-cover"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-3xl shadow-2xl border-l-8 border-[#F3764A]">
@@ -130,8 +213,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. THE SOLUTION (EXPANDED FEATURES) */}
-      <section className="py-24 px-4 bg-[#F4F0EC]/30 relative z-10">
+      {/* 3. OUR CLIENTS */}
+      <section className="py-24 bg-[#F4F0EC]/50 overflow-hidden relative z-10">
+        <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
+            Our Partners
+          </h2>
+          <p className="text-[#F3764A] font-bold tracking-widest uppercase text-sm">
+            Partnering with Leading Organizations
+          </p>
+        </div>
+        <div className="relative flex">
+          <motion.div
+            className="flex gap-12 whitespace-nowrap"
+            animate={{ x: ["0%", "-10%"] }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+          >
+            {[...shuffledClients, ...shuffledClients].map((client, i) => (
+              <div
+                key={i}
+                className="relative group w-64 h-32 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center p-6 transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
+              >
+                <img
+                  src={client.src}
+                  alt={client.name}
+                  className="max-h-full max-w-full object-contain transition-all duration-500"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. THE SOLUTION */}
+      <section className="py-24 px-4 bg-white relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
             Our Solution
@@ -148,55 +263,38 @@ export default function Home() {
             {[
               {
                 title: "Automate Finances",
-
                 desc: "Automate rent collection and invoicing to ensure healthy cash flow.",
-
                 icon: <Zap />,
               },
-
               {
                 title: "Real-time Tracking",
-
                 desc: "Track property performance and financial metrics in real-time.",
-
                 icon: <BarChart3 />,
               },
-
               {
                 title: "Digital Operations",
-
                 desc: "Manage tenants, leases, and maintenance digitally with ease.",
-
                 icon: <Building2 />,
               },
-
               {
                 title: "Accountability",
-
                 desc: "Improve transparency and accountability between all stakeholders.",
-
                 icon: <ShieldCheck />,
               },
-
               {
                 title: "Tenant Satisfaction",
-
                 desc: "Enhance tenant satisfaction and retention through better service.",
-
                 icon: <Users />,
               },
-
               {
                 title: "Expert Consultancy",
-
                 desc: "Built specifically for African markets with expert-led hardware support.",
-
                 icon: <Globe />,
               },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-md transition-all group"
+                className="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-md transition-all group border border-gray-50"
               >
                 <div className="w-16 h-16 bg-[#F4F0EC] group-hover:bg-[#F3764A] group-hover:text-white rounded-2xl flex items-center justify-center text-[#F3764A] mx-auto mb-6 transition-all">
                   {item.icon}
@@ -211,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. WHO IT'S FOR (NEW SECTION) */}
+      {/* 5. WHO IT'S FOR */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
@@ -244,7 +342,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. HARDWARE PREVIEW & WHY SMATPROP */}
+      {/* 6. HARDWARE PREVIEW */}
       <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="rounded-tl-[150px] rounded-br-[150px] overflow-hidden shadow-2xl relative">
@@ -261,7 +359,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
           <div>
             <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
               Why SmatProp
@@ -286,7 +383,7 @@ export default function Home() {
               ))}
             </div>
             <Link href="/hardware">
-              <button className="mt-10 bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-[#0D1B3A] transition-all">
+              <button className="mt-10 bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
                 Explore Hardware{" "}
                 <ArrowRight size={20} className="text-[#F3764A]" />
               </button>
@@ -295,61 +392,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 ">
-        <div className="container px-6 mx-auto">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-6 text-4xl font-bold">
-              Available Payment Methods
-            </h2>
-
-            <p className="mb-16 text-lg text-slate-400">
-              We support all major payment methods in Zimbabwe, making it easy
-              for your audience to support your creativity.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
-              {PAYMENT_METHODS.map((method) => (
-                <motion.div
-                  key={method.name}
-                  className="flex items-center justify-center transition-all group"
-                >
-                  <img
-                    src={method.src}
-                    alt={method.name}
-                    className="w-full h-full max-w-37.5 md:max-w-50 object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
-                </motion.div>
-              ))}
-            </div>
+      {/* 7. PAYMENTS */}
+      <section className="py-24 bg-[#F4F0EC]/20">
+        <div className="container px-6 mx-auto text-center">
+          <h2 className="mb-6 text-4xl font-serif font-bold text-secondary">
+            Available Payment Methods
+          </h2>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+            {PAYMENT_METHODS.map((method) => (
+              <motion.div
+                key={method.name}
+                className="flex items-center justify-center transition-all group"
+              >
+                <img
+                  src={method.src}
+                  alt={method.name}
+                  className="w-full h-full max-w-37.5 md:max-w-50 object-contain transition-transform duration-300 group-hover:scale-110"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 7. CONTACT CTA (RESTORED) */}
+      {/* 8. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
             Let&apos;s Modernize <br /> Your Property
           </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Whether you manage a single apartment or a nationwide portfolio,
-            SmatProp provides the tools you need to scale efficiently.
-          </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
               <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                 Get a Quote <ArrowRight size={18} className="text-[#F3764A]" />
               </button>
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-left">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#F3764A] shadow-sm">
                 <Phone size={20} />
               </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-400 uppercase tracking-widest text-left">
+              <div>
+                <p className="text-xs text-gray-400 uppercase tracking-widest">
                   Call us
                 </p>
-                <p className="font-bold text-secondary text-xl tracking-tight">
+                <p className="font-bold text-xl tracking-tight">
                   (+263) 86 8800
                 </p>
               </div>

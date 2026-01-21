@@ -56,16 +56,16 @@ export default function Footer() {
               architectural-grade solutions for modern living in Zimbabwe.
             </p>
             <div className="flex gap-4">
-              <Link href="https://facebook.com" target="_blank">
+              <Link href="https://www.facebook.com/p/Smat-Prop-100086626465712/" target="_blank">
                 <SocialIcon icon={<Facebook size={18} />} />
               </Link>
-              <Link href="https://x.com" target="_blank">
+              <Link href="#" target="_blank">
                 <SocialIcon icon={<XIcon size={18} />} />
               </Link>
-              <Link href="https://instagram.com" target="_blank">
+              <Link href="https://www.instagram.com/smatprop/" target="_blank">
                 <SocialIcon icon={<Instagram size={18} />} />
               </Link>
-              <Link href="https://linkedin.com" target="_blank">
+              <Link href="#" target="_blank">
                 <SocialIcon icon={<Linkedin size={18} />} />
               </Link>
             </div>

@@ -16,7 +16,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Show navbar if scrolling up or at the top
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       } else {
@@ -44,7 +43,7 @@ export default function Navbar() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100"
     >
-      <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
         {/* Logo */}
         <Link
           href="/"
@@ -53,8 +52,8 @@ export default function Navbar() {
           <Image
             src="/smatprop_logo.svg"
             alt="SmatProp Logo"
-            width={140}
-            height={45}
+            width={130}
+            height={40}
             priority
           />
         </Link>
@@ -62,29 +61,29 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            // This logic checks if the current URL matches the link, normalizing trailing slashes
+            const isActive = pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '');
+
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-[15px] font-medium tracking-wide transition-colors duration-300 ${
+                className={`relative text-[15px] font-semibold tracking-wide py-1 transition-all duration-300 ${
                   isActive
-                    ? "text-[#F3764A]"
-                    : "text-secondary hover:text-[#F3764A]"
+                    ? "text-[#F3764A]" // Orange when active
+                    : "text-secondary hover:text-[#F3764A]" // Secondary color normally
                 }`}
               >
                 {link.name}
+
+                {/* PERSISTENT UNDERLINE: Only shows when isActive is true */}
                 {isActive && (
-                  <motion.div
-                    layoutId="navUnderline"
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#F3764A]"
-                  />
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#F3764A]" />
                 )}
               </Link>
             );
           })}
 
-          {/* CTA Button */}
           <Link
             href="tel:+2638688008361"
             className="group flex items-center gap-2 bg-secondary hover:bg-[#F3764A] text-white px-7 py-3 rounded-2xl transition-all duration-500 shadow-md hover:shadow-lg text-sm font-bold uppercase tracking-widest"
@@ -99,10 +98,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-50 text-secondary p-2 hover:cursor-pointer"
+          className="md:hidden relative z-50 text-secondary p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -113,24 +112,25 @@ export default function Navbar() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 h-screen w-full bg-white z-40 md:hidden flex flex-col justify-center items-center"
           >
             <div className="flex flex-col items-center space-y-8">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '');
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-4xl font-serif transition-colors ${
-                      isActive
-                        ? "text-[#F3764A]"
-                        : "text-secondary hover:text-[#F3764A]"
+                    className={`text-4xl font-serif relative py-2 ${
+                      isActive ? "text-[#F3764A]" : "text-secondary"
                     }`}
                   >
                     {link.name}
+                    {/* PERSISTENT UNDERLINE (Mobile) */}
+                    {isActive && (
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#F3764A]" />
+                    )}
                   </Link>
                 );
               })}

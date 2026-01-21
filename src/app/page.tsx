@@ -336,7 +336,7 @@ export default function Home() {
             SmatProp provides the tools you need to scale efficiently.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Link href="/contact">
+            <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
               <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                 Get a Quote <ArrowRight size={18} className="text-[#F3764A]" />
               </button>

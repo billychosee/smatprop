@@ -38,7 +38,7 @@ export default function Hardware() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-112.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop"
+              src="/cloud_based_property_management_software_visualized_in_an.jpeg"
               alt="Smart Building Technology"
               className="w-full h-full object-cover"
             />
@@ -284,7 +284,7 @@ export default function Hardware() {
               smart ecosystem for your property.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <Link href="/contact">
+              <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
                 <button className="bg-white text-secondary px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-gray-100 transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                   Request a Demo{" "}
                   <ArrowRight size={20} className="text-[#F3764A]" />

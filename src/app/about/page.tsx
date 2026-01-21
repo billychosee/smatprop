@@ -33,7 +33,7 @@ export default function About() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-100 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+              src="/a_modern_futuristic_real_estate_scene_set.jpeg"
               alt="Black CEO leading a strategy session"
               className="w-full h-full object-cover"
             />
@@ -59,7 +59,7 @@ export default function About() {
           <div className="lg:w-1/2 relative flex">
             <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-[#F4F0EC] w-full min-h-full">
               <img
-                src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=1974&auto=format&fit=crop"
+                src="/a_modern_futuristic_real_estate_scene_set.png"
                 alt="Professional Black woman using digital tablet"
                 className="w-full h-full object-cover"
               />
@@ -133,7 +133,7 @@ export default function About() {
                 title: "Prop-Software",
                 desc: "Cloud-based property management software for complete digital automation.",
                 icon: <Settings size={28} />,
-                img: "https://images.unsplash.com/photo-1573163281534-dd1a841d8d14?q=80&w=2070&auto=format&fit=crop",
+                img: "/cloud_based_property_management_software_visualized_in_an.png",
               },
               {
                 title: "Hardware Integration",
@@ -145,7 +145,7 @@ export default function About() {
                 title: "Advisory Services",
                 desc: "Expert consultancy services to help you optimize and scale your real estate operations.",
                 icon: <Users size={28} />,
-                img: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=2070&auto=format&fit=crop",
+                img: "/professional_real_estate_advisory_scene_in_an.png",
               },
             ].map((item, i) => (
               <div
@@ -241,7 +241,7 @@ export default function About() {
               SmatProp provides the tools you need to scale efficiently.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="/contact">
+              <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                   Get a Quote{" "}
                   <ArrowRight size={18} className="text-[#F3764A]" />

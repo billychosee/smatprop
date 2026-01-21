@@ -77,7 +77,7 @@ export default function Features() {
             {
               title: "Tenant & Lease",
               icon: <Users size={24} />,
-              img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop",
+              img: "/tenant-and-lease.png",
               features: [
                 "Digital agreement signing",
                 "Automated rent reminders",
@@ -99,7 +99,7 @@ export default function Features() {
             {
               title: "Reporting",
               icon: <BarChart3 size={24} />,
-              img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
+              img: "/realistic_property_management_software_interface.jpeg",
               features: [
                 "Income & expense tracking",
                 "Budgeting & forecasting",
@@ -121,7 +121,7 @@ export default function Features() {
             {
               title: "Market & Security",
               icon: <Search size={24} />,
-              img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop",
+              img: "/secure_digital_real_estate_marketplace_in_an.jpg",
               features: [
                 "Centralized verified listings",
                 "Multi-factor authentication",
@@ -275,7 +275,7 @@ export default function Features() {
               Ready for Smarter <br /> Management?
             </h2>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="/contact">
+              <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                   Get Started{" "}
                   <ArrowRight size={18} className="text-[#F3764A]" />

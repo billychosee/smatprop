@@ -23,46 +23,23 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const PAYMENT_METHODS = [
+const INTEGRATIONS = [
   { name: "Ecocash", src: "/Ecocash.svg" },
   { name: "Omari", src: "/omari.svg" },
   { name: "Mastercard", src: "/mastercard.svg" },
   { name: "Zimswitch", src: "/zimswitch.svg" },
   { name: "Visa", src: "/visa.svg" },
   { name: "Innbucks", src: "/innbucks.svg" },
-];
-
-const CLIENTS = [
-  {
-    name: "Ntiyiso",
-    src: "/clients-logos/ntiyiso_logo.svg",
-  },
   {
     name: "Robert Root",
     src: "/clients-logos/robertroot_logo.png",
-  },
-  {
-    name: "Sasseta",
-    src: "/clients-logos/sasseta_logo.svg",
-  },
-  {
-    name: "Services SETA",
-    src: "/clients-logos/services_seta_logo.svg",
   },
   {
     name: "Sharetek",
     src: "/clients-logos/sharetek_logo.svg",
   },
   {
-    name: "Smat QR",
-    src: "/clients-logos/smat_qr_logo.svg",
-  },
-  {
-    name: "Smat Tutor",
-    src: "/clients-logos/smat_tutor_logo.svg",
-  },
-  {
-    name: "Smat Ech",
+    name: "Smat Tech",
     src: "/clients-logos/smatech_logo.svg",
   },
   {
@@ -72,9 +49,9 @@ const CLIENTS = [
 ];
 
 export default function Home() {
-  const shuffledClients = useMemo(
+  const shuffledIntegrations = useMemo(
     // eslint-disable-next-line react-hooks/purity
-    () => [...CLIENTS].sort(() => Math.random() - 0.5),
+    () => [...INTEGRATIONS].sort(() => Math.random() - 0.5),
     [],
   );
 
@@ -100,7 +77,7 @@ export default function Home() {
               className="text-3xl md:text-5xl xl:text-6xl font-serif text-white leading-[1.1] mb-3"
             >
               Intelligence <br />
-              <span className="text-[#F3764A]">Behind Every Asset.</span>
+              <span className="text-primary">Behind Every Asset.</span>
             </motion.h1>
 
             <motion.p
@@ -121,7 +98,7 @@ export default function Home() {
               className="flex flex-col gap-4"
             >
               <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
-                <button className="bg-[#F3764A] text-white px-6 py-3 xl:px-8 xl:py-4 rounded-xl flex items-center w-fit gap-2 font-bold shadow-lg hover:bg-[#e26539] transition-all text-sm xl:text-base">
+                <button className="bg-primary text-white px-6 py-3 xl:px-8 xl:py-4 rounded-xl flex items-center w-fit gap-2 font-bold shadow-lg hover:bg-primary/80 transition-all text-sm xl:text-base">
                   Request Live Demo <ArrowRight size={18} />
                 </button>
               </Link>
@@ -129,7 +106,7 @@ export default function Home() {
               {/* Tightened Stats Row */}
               <div className="flex gap-8 pt-4 mt-2 border-t border-white/10 w-full max-w-xs">
                 <div>
-                  <p className="text-[#F3764A] text-lg xl:text-2xl font-bold">
+                  <p className="text-primary text-lg xl:text-2xl font-bold">
                     15%
                   </p>
                   <p className="text-gray-400 text-[8px] xl:text-[9px] uppercase tracking-widest font-semibold">
@@ -137,7 +114,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-[#F3764A] text-lg xl:text-2xl font-bold">
+                  <p className="text-primary text-lg xl:text-2xl font-bold">
                     24/7
                   </p>
                   <p className="text-gray-400 text-[8px] xl:text-[9px] uppercase tracking-widest font-semibold">
@@ -156,8 +133,6 @@ export default function Home() {
               alt="Hero Image"
             />
             <div className="absolute inset-0 bg-linear-to-r from-secondary/40 lg:from-transparent to-transparent" />
-
-
           </div>
         </div>
       </section>
@@ -166,7 +141,7 @@ export default function Home() {
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
               The Challenge
             </p>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-6">
@@ -189,7 +164,7 @@ export default function Home() {
                 <div key={i} className="flex items-start gap-3">
                   <AlertCircle
                     size={20}
-                    className="text-[#F3764A] mt-1 shrink-0"
+                    className="text-primary mt-1 shrink-0"
                   />
                   <span className="text-secondary font-medium">{item}</span>
                 </div>
@@ -202,8 +177,8 @@ export default function Home() {
               alt="Reviewing data"
               className="rounded-[60px] shadow-2xl w-full h-125 object-cover"
             />
-            <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-3xl shadow-2xl border-l-8 border-[#F3764A]">
-              <TrendingUp className="text-[#F3764A] mb-2" size={40} />
+            <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-3xl shadow-2xl border-l-8 border-primary">
+              <TrendingUp className="text-primary mb-2" size={40} />
               <p className="text-3xl font-serif text-secondary">15% Loss</p>
               <p className="text-xs text-gray-400 uppercase tracking-widest font-bold text-center">
                 Rental Income Gap
@@ -214,13 +189,13 @@ export default function Home() {
       </section>
 
       {/* 3. OUR CLIENTS */}
-      <section className="py-24 bg-[#F4F0EC]/50 overflow-hidden relative z-10">
+      <section className="py-24 bg-accent/50 overflow-hidden relative z-10">
         <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
-            Our Partners
+            Our Integrations
           </h2>
-          <p className="text-[#F3764A] font-bold tracking-widest uppercase text-sm">
-            Partnering with Leading Organizations
+          <p className="text-primary font-bold tracking-widest uppercase text-sm">
+            Seamless Connections & Payments
           </p>
         </div>
         <div className="relative flex">
@@ -229,14 +204,14 @@ export default function Home() {
             animate={{ x: ["0%", "-10%"] }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
-            {[...shuffledClients, ...shuffledClients].map((client, i) => (
+            {[...shuffledIntegrations, ...shuffledIntegrations].map((integration, i) => (
               <div
                 key={i}
                 className="relative group w-64 h-32 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center p-6 transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
               >
                 <img
-                  src={client.src}
-                  alt={client.name}
+                  src={integration.src}
+                  alt={integration.name}
                   className="max-h-full max-w-full object-contain transition-all duration-500"
                 />
               </div>
@@ -248,7 +223,7 @@ export default function Home() {
       {/* 4. THE SOLUTION */}
       <section className="py-24 px-4 bg-white relative z-10">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+          <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
             Our Solution
           </p>
           <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
@@ -296,7 +271,7 @@ export default function Home() {
                 key={idx}
                 className="bg-white p-10 rounded-[40px] shadow-sm hover:shadow-md transition-all group border border-gray-50"
               >
-                <div className="w-16 h-16 bg-[#F4F0EC] group-hover:bg-[#F3764A] group-hover:text-white rounded-2xl flex items-center justify-center text-[#F3764A] mx-auto mb-6 transition-all">
+                <div className="w-16 h-16 bg-accent group-hover:bg-primary group-hover:text-white rounded-2xl flex items-center justify-center text-primary mx-auto mb-6 transition-all">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-serif text-secondary mb-4">
@@ -329,9 +304,9 @@ export default function Home() {
           ].map((type, i) => (
             <div
               key={i}
-              className="border border-gray-100 p-8 rounded-3xl text-center hover:border-[#F3764A] transition-colors group"
+              className="border border-gray-100 p-8 rounded-3xl text-center hover:border-primary transition-colors group"
             >
-              <div className="text-gray-400 group-hover:text-[#F3764A] mb-4 flex justify-center">
+              <div className="text-gray-400 group-hover:text-primary mb-4 flex justify-center">
                 {type.icon}
               </div>
               <p className="font-serif text-secondary font-medium">
@@ -351,7 +326,7 @@ export default function Home() {
               alt="Hardware"
               className="w-full h-125 object-cover"
             />
-            <div className="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-[#F3764A]">
+            <div className="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-primary">
               <Cpu className="text-secondary mb-2" size={32} />
               <p className="text-secondary font-bold">Smart Hub v2.0</p>
               <p className="text-xs text-gray-400 uppercase tracking-widest">
@@ -360,7 +335,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
               Why SmatProp
             </p>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
@@ -378,57 +353,35 @@ export default function Home() {
                   key={i}
                   className="flex items-center gap-3 text-gray-600 font-medium"
                 >
-                  <CheckCircle2 size={20} className="text-[#F3764A]" /> {text}
+                  <CheckCircle2 size={20} className="text-primary" /> {text}
                 </div>
               ))}
             </div>
             <Link href="/hardware">
-              <button className="mt-10 bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-[#0D1B3A] transition-all hover:cursor-pointer">
+              <button className="mt-10 bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-secondary transition-all hover:cursor-pointer">
                 Explore Hardware{" "}
-                <ArrowRight size={20} className="text-[#F3764A]" />
+                <ArrowRight size={20} className="text-primary" />
               </button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 7. PAYMENTS */}
-      <section className="py-24 bg-[#F4F0EC]/20">
-        <div className="container px-6 mx-auto text-center">
-          <h2 className="mb-6 text-4xl font-serif font-bold text-secondary">
-            Available Payment Methods
-          </h2>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
-            {PAYMENT_METHODS.map((method) => (
-              <motion.div
-                key={method.name}
-                className="flex items-center justify-center transition-all group"
-              >
-                <img
-                  src={method.src}
-                  alt={method.name}
-                  className="w-full h-full max-w-37.5 md:max-w-50 object-contain transition-transform duration-300 group-hover:scale-110"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 8. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 text-center">
+        <div className="bg-accent rounded-[50px] py-20 px-8 text-center">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
             Let&apos;s Modernize <br /> Your Property
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
-              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
-                Get a Quote <ArrowRight size={18} className="text-[#F3764A]" />
+              <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
+                Get a Quote <ArrowRight size={18} className="text-primary" />
               </button>
             </Link>
             <div className="flex items-center gap-4 text-left">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#F3764A] shadow-sm">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
                 <Phone size={20} />
               </div>
               <div>
@@ -448,3 +401,7 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+

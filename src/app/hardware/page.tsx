@@ -51,7 +51,7 @@ export default function Hardware() {
             >
               Hardware Solutions
             </motion.h1>
-            <p className="text-[#F3764A] font-semibold tracking-widest uppercase">
+            <p className="text-primary font-semibold tracking-widest uppercase">
               Precision Engineering for Smart Spaces
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Hardware() {
               transition={{ delay: idx * 0.1 }}
               className="flex flex-col items-center text-center p-8 border border-gray-100 rounded-[40px] hover:shadow-xl transition-all bg-white group w-full md:w-[calc(50%-24px)] lg:w-[calc(33.333%-32px)]"
             >
-              <div className="w-20 h-20 bg-[#F4F0EC] rounded-full flex items-center justify-center text-[#F3764A] mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
+              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center text-primary mb-8 group-hover:bg-secondary group-hover:text-white transition-colors">
                 {item.icon}
               </div>
               <h3 className="text-2xl font-serif text-secondary mb-4">
@@ -123,7 +123,7 @@ export default function Hardware() {
       {/* 3. CREATIVE: THE HARDWARE ADVANTAGE (Bento Grid) */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+          <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
             Elevating Management
           </p>
           <h2 className="text-4xl md:text-5xl font-serif text-secondary">
@@ -135,7 +135,7 @@ export default function Hardware() {
           {/* Big Card - Billing */}
           <div className="md:col-span-2 lg:col-span-3 bg-secondary p-10 rounded-[40px] text-white flex flex-col justify-between group overflow-hidden relative">
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#F3764A] mb-6">
+              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                 <BarChart3 size={24} />
               </div>
               <h3 className="text-3xl font-serif mb-4">Billing Transparency</h3>
@@ -150,7 +150,7 @@ export default function Hardware() {
           </div>
 
           {/* Small Card - Maintenance */}
-          <div className="md:col-span-2 lg:col-span-3 bg-[#F4F0EC] p-10 rounded-[40px] flex flex-col justify-center border border-gray-100">
+          <div className="md:col-span-2 lg:col-span-3 bg-accent p-10 rounded-[40px] flex flex-col justify-center border border-gray-100">
             <div className="flex items-center gap-4 mb-6">
               <div className="text-secondary">
                 <Activity size={32} />
@@ -166,7 +166,7 @@ export default function Hardware() {
           </div>
 
           {/* Medium Card - Security */}
-          <div className="md:col-span-2 lg:col-span-2 bg-[#F3764A] p-10 rounded-[40px] text-white">
+          <div className="md:col-span-2 lg:col-span-2 bg-primary p-10 rounded-[40px] text-white">
             <ShieldCheck size={40} className="mb-6" />
             <h3 className="text-2xl font-serif mb-4 text-secondary">
               Total Security
@@ -179,7 +179,7 @@ export default function Hardware() {
 
           {/* Small Card - Automation */}
           <div className="md:col-span-2 lg:col-span-2 border border-gray-100 p-10 rounded-[40px] flex flex-col justify-between hover:bg-gray-50 transition-colors">
-            <MousePointerClick className="text-[#F3764A] mb-4" />
+            <MousePointerClick className="text-primary mb-4" />
             <div>
               <h4 className="font-bold text-secondary mb-2">
                 Zero Manual Errors
@@ -194,7 +194,7 @@ export default function Hardware() {
           {/* Medium Card - Satisfaction */}
           <div className="md:col-span-4 lg:col-span-2 bg-secondary p-10 rounded-[40px] text-white flex items-end">
             <div>
-              <Users size={32} className="text-[#F3764A] mb-4" />
+              <Users size={32} className="text-primary mb-4" />
               <h4 className="text-xl font-serif mb-2">Tenant Satisfaction</h4>
               <p className="text-white/50 text-xs">
                 Transparent usage data and easy remote top-ups via the mobile
@@ -207,7 +207,7 @@ export default function Hardware() {
 
       {/* 4. STAR HARDWARE FEATURES */}
       <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 md:px-16">
+        <div className="bg-accent rounded-[50px] py-20 px-8 md:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-12">
@@ -218,17 +218,17 @@ export default function Hardware() {
                   {
                     title: "Smart Metering Ecosystem",
                     desc: "Real-time electricity and water tracking with remote top-ups and improved sustainability.",
-                    icon: <Activity className="text-[#F3764A]" />,
+                    icon: <Activity className="text-primary" />,
                   },
                   {
                     title: "SmatAccess Control",
                     desc: "Secure logs, QR codes, biometric auth, and license plate recognition for total peace of mind.",
-                    icon: <ScanFace className="text-[#F3764A]" />,
+                    icon: <ScanFace className="text-primary" />,
                   },
                   {
                     title: "Digital Inspection Sync",
                     desc: "Sync hardware data with entrance and exit checklists for absolute billing transparency.",
-                    icon: <ClipboardCheck className="text-[#F3764A]" />,
+                    icon: <ClipboardCheck className="text-primary" />,
                   },
                 ].map((star, i) => (
                   <motion.div
@@ -260,7 +260,7 @@ export default function Hardware() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-[#F3764A] font-bold text-4xl font-serif">
+                <p className="text-primary font-bold text-4xl font-serif">
                   99.9%
                 </p>
                 <p className="text-sm text-gray-500 uppercase tracking-widest">
@@ -287,11 +287,11 @@ export default function Hardware() {
               <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
                 <button className="bg-white text-secondary px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-gray-100 transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                   Request a Demo{" "}
-                  <ArrowRight size={20} className="text-[#F3764A]" />
+                  <ArrowRight size={20} className="text-primary" />
                 </button>
               </Link>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-[#F3764A]">
+                <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-primary">
                   <Phone size={20} />
                 </div>
                 <div className="text-left">
@@ -299,7 +299,7 @@ export default function Hardware() {
                     Talk to Sales
                   </p>
                   <p className="font-bold text-white tracking-tighter">
-                    (+263) 86 8800
+                    (+263) 86 880 08361
                   </p>
                 </div>
               </div>
@@ -312,3 +312,7 @@ export default function Hardware() {
     </div>
   );
 }
+
+
+
+

@@ -1,54 +1,157 @@
+ 
 "use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Menu, X, Phone, ArrowUpRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Activity,
+  FileText,
+  ChevronDown,
+  Wallet,
+  Wrench,
+  ClipboardCheck,
+  Fingerprint,
+  Bell,
+  Zap,
+  Megaphone,
+  Globe,
+  Users,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const pathname = usePathname();
+
+  const defaultPreview = {
+    title: "SmatProp Platform",
+    desc: "A unified ecosystem for modern property management and security.",
+    img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+  };
+
+  const [activePreview, setActivePreview] = useState(defaultPreview);
+
+  // All 13 features in order
+  const allFeatures = [
+    {
+      name: "Property & Unit",
+      icon: Home,
+      href: "/features/property-unit",
+      desc: "Property database & categorization (Residential, Commercial, etc.)",
+      img: "/property-and-units-nav.png",
+    },
+    {
+      name: "Tenant & Lease",
+      icon: Users,
+      href: "/features/tenant-lease",
+      desc: "Tenant profiles & contact details",
+      img: "/tenants-and-lease-nav.png",
+    },
+    {
+      name: "Financial Management",
+      icon: Wallet,
+      href: "/features/financial-management",
+      desc: "Invoicing & billing",
+      img: "/financial-management-nav.png",
+    },
+    {
+      name: "Income & Expense",
+      icon: Wallet,
+      href: "/features/income-expense",
+      desc: "Property income tracking by unit & property",
+      img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011",
+    },
+    {
+      name: "Contract & Document",
+      icon: FileText,
+      href: "/features/contract-document",
+      desc: "Lease agreement storage & version tracking",
+      img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
+    },
+    {
+      name: "Tenant Screening",
+      icon: ClipboardCheck,
+      href: "/features/tenant-screening",
+      desc: "Tenant credit checks & verification",
+      img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070",
+    },
+    {
+      name: "Maintenance Control",
+      icon: Wrench,
+      href: "/features/maintenance-control",
+      desc: "Maintenance request submission & tracking",
+      img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070",
+    },
+    {
+      name: "Communications",
+      icon: Bell,
+      href: "/features/communications",
+      desc: "Tenant/landlord messaging system",
+      img: "https://images.unsplash.com/photo-1577563906417-45a18e029474?q=80&w=2070",
+    },
+    {
+      name: "Analytics Hub",
+      icon: Activity,
+      href: "/features/analytics-hub",
+      desc: "Customizable occupancy and revenue reports",
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070",
+    },
+    {
+      name: "Security & Access",
+      icon: Fingerprint,
+      href: "/smataccess",
+      desc: "Role-based access (Admins, Agents, Tenants)",
+      img: "https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=2036",
+      highlight: true,
+    },
+    {
+      name: "Marketing Tools",
+      icon: Megaphone,
+      href: "/features/marketing-tools",
+      desc: "Online property listings & search functionality",
+      img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+    },
+    {
+      name: "Service Ecosystem",
+      icon: Globe,
+      href: "/features/service-ecosystem",
+      desc: "Contractor profiles & management",
+      img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084",
+    },
+    {
+      name: "API & Integration",
+      icon: Zap,
+      href: "/features/api-integration",
+      desc: "Smatpay Payment gateway integration",
+      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2074",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+      setIsVisible(currentScrollY <= lastScrollY || currentScrollY <= 100);
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Features", href: "/features" },
-    { name: "Hardware", href: "/hardware" },
-    { name: "Contact", href: "/contact" },
-  ];
-
   return (
     <motion.header
-      initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : -100 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
       className="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
         {/* Logo */}
-        <Link
-          href="/"
-          className="relative z-50 hover:opacity-80 transition-opacity"
-        >
+        <Link href="/" className="relative z-50">
           <Image
             src="/smatprop_logo.svg"
             alt="SmatProp Logo"
@@ -58,94 +161,141 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-10">
-          {navLinks.map((link) => {
-            // This logic checks if the current URL matches the link, normalizing trailing slashes
-            const isActive = pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '');
+          {["Home", "About", "Hardware"].map((name) => (
+            <Link
+              key={name}
+              href={name === "Home" ? "/" : `/${name.toLowerCase()}`}
+              className="text-[15px] font-semibold text-secondary hover:text-primary transition-colors"
+            >
+              {name}
+            </Link>
+          ))}
 
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`relative text-[15px] font-semibold tracking-wide py-1 transition-all duration-300 ${
-                  isActive
-                    ? "text-[#F3764A]" // Orange when active
-                    : "text-secondary hover:text-[#F3764A]" // Secondary color normally
-                }`}
-              >
-                {link.name}
+          {/* CENTERED FLAT GRID DROPDOWN */}
+          <div
+            className="static"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => {
+              setIsDropdownOpen(false);
+              setActivePreview(defaultPreview);
+            }}
+          >
+            <Link href="/features" className="flex items-center gap-1 text-[15px] font-semibold py-8 text-secondary hover:text-primary transition-colors">
+              Features{" "}
+              <ChevronDown
+                size={14}
+                className={isDropdownOpen ? "rotate-180" : ""}
+              />
+            </Link>
 
-                {/* PERSISTENT UNDERLINE: Only shows when isActive is true */}
-                {isActive && (
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#F3764A]" />
-                )}
-              </Link>
-            );
-          })}
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, x: "-50%" }}
+                  animate={{ opacity: 1, y: 0, x: "-50%" }}
+                  exit={{ opacity: 0, y: 15, x: "-50%" }}
+                  className="absolute top-[85%] left-1/2 w-275 bg-white rounded-[40px] shadow-2xl border border-gray-100 overflow-hidden flex z-50"
+                >
+                  {/* FLAT 3-COLUMN FEATURE GRID */}
+                  <div className="flex-[2.5] p-12 grid grid-cols-3 gap-x-4 gap-y-1">
+                    {allFeatures.map((item, i) => (
+                      <Link
+                        key={i}
+                        href={item.href}
+                        onMouseEnter={() =>
+                          setActivePreview({
+                            title: item.name,
+                            desc: item.desc,
+                            img: item.img,
+                          })
+                        }
+                        className={`group flex items-center gap-3 p-3 rounded-2xl transition-all ${item.highlight ? "bg-primary/5" : "hover:bg-gray-50"}`}
+                      >
+                        <div
+                          className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${item.highlight ? "bg-primary text-white" : "bg-gray-100 text-secondary group-hover:bg-primary/10 group-hover:text-primary"}`}
+                        >
+                          <item.icon size={16} />
+                        </div>
+                        <span
+                          className={`text-[13px] font-bold tracking-tight ${item.highlight ? "text-primary" : "text-secondary"}`}
+                        >
+                          {item.name}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* DYNAMIC 4:3 PREVIEW PANEL */}
+                  <div className="flex-1 bg-gray-50/50 p-10 border-l border-gray-100 flex flex-col justify-center min-w-85">
+                    <div className="aspect-4/3 rounded-3xl overflow-hidden mb-6 shadow-2xl relative bg-gray-200">
+                      <AnimatePresence mode="wait">
+                        <motion.img
+                          key={activePreview.img}
+                          src={activePreview.img}
+                          initial={{ opacity: 0, scale: 1.05 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 1.05 }}
+                          className="w-full h-full object-cover"
+                        />
+                      </AnimatePresence>
+                    </div>
+                    <motion.div
+                      key={activePreview.title}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                    >
+                      <h3 className="font-serif text-2xl text-secondary mb-3 leading-tight">
+                        {activePreview.title}
+                      </h3>
+                      <p className="text-gray-500 text-xs leading-relaxed mb-8 font-medium">
+                        {activePreview.desc}
+                      </p>
+                      <div className="inline-flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        Explore Module <ArrowRight size={14} />
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <Link
-            href="tel:+2638688008361"
-            className="group flex items-center gap-2 bg-secondary hover:bg-[#F3764A] text-white px-7 py-3 rounded-2xl transition-all duration-500 shadow-md hover:shadow-lg text-sm font-bold uppercase tracking-widest"
+            href="/contact"
+            className="text-[15px] font-semibold text-secondary"
           >
-            Call Us
-            <ArrowUpRight
-              size={16}
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-            />
+            Contact
           </Link>
+
+          <div className="flex items-center gap-4 ml-4">
+            <Link
+              href="#"
+              className="bg-secondary text-white px-7 py-3 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all hover:bg-black"
+            >
+              Log In
+            </Link>
+            <Link
+              href="#"
+              className="bg-primary text-white px-7 py-3 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all hover:bg-primary/80"
+            >
+              Sign In
+            </Link>
+          </div>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-50 text-secondary p-2"
+          className="md:hidden text-secondary"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 h-screen w-full bg-white z-40 md:hidden flex flex-col justify-center items-center"
-          >
-            <div className="flex flex-col items-center space-y-8">
-              {navLinks.map((link) => {
-                const isActive = pathname.replace(/\/$/, '') === link.href.replace(/\/$/, '');
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-4xl font-serif relative py-2 ${
-                      isActive ? "text-[#F3764A]" : "text-secondary"
-                    }`}
-                  >
-                    {link.name}
-                    {/* PERSISTENT UNDERLINE (Mobile) */}
-                    {isActive && (
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#F3764A]" />
-                    )}
-                  </Link>
-                );
-              })}
-              <Link
-                href="tel:+2638688008361"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 bg-[#F3764A] text-white px-10 py-5 rounded-3xl font-bold uppercase tracking-widest text-sm shadow-xl"
-              >
-                <Phone size={18} fill="currentColor" />
-                Call Us Now
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.header>
   );
 }
+
+
+
+

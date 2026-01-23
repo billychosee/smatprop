@@ -43,7 +43,7 @@ export default function Contact() {
             >
               Contact Us
             </motion.h1>
-            <p className="text-[#F3764A] font-semibold tracking-widest uppercase">
+            <p className="text-primary font-semibold tracking-widest uppercase">
               Let&apos;s start a conversation
             </p>
           </div>
@@ -97,14 +97,14 @@ export default function Contact() {
                     name="name"
                     placeholder="Name"
                     required
-                    className="w-full border-b border-gray-300 py-4 focus:border-[#F3764A] outline-none transition-colors bg-transparent"
+                    className="w-full border-b border-gray-300 py-4 focus:border-primary outline-none transition-colors bg-transparent"
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
                     required
-                    className="w-full border-b border-gray-300 py-4 focus:border-[#F3764A] outline-none transition-colors bg-transparent"
+                    className="w-full border-b border-gray-300 py-4 focus:border-primary outline-none transition-colors bg-transparent"
                   />
                 </div>
                 <textarea
@@ -112,11 +112,11 @@ export default function Contact() {
                   placeholder="Hello, I am interested in..."
                   rows={4}
                   required
-                  className="w-full border-b border-gray-300 py-4 focus:border-[#F3764A] outline-none transition-colors bg-transparent resize-none"
+                  className="w-full border-b border-gray-300 py-4 focus:border-primary outline-none transition-colors bg-transparent resize-none"
                 ></textarea>
 
-                <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-[#0D1B3A] transition-all font-semibold hover:cursor-pointer">
-                  Send Now <Send size={18} className="text-[#F3764A]" />
+                <button className="bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-3 shadow-lg hover:bg-secondary transition-all font-semibold hover:cursor-pointer">
+                  Send Now <Send size={18} className="text-primary" />
                 </button>
               </motion.form>
             )}
@@ -129,7 +129,7 @@ export default function Contact() {
             className="relative"
           >
             {/* Signature Arch Shape */}
-            <div className="w-full aspect-4/5 rounded-t-full overflow-hidden border-15 border-[#F4F0EC] shadow-2xl">
+            <div className="w-full aspect-4/5 rounded-t-full overflow-hidden border-15 border-accent shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073&auto=format&fit=crop"
                 alt="Residential Property"
@@ -139,7 +139,7 @@ export default function Contact() {
 
             {/* Floating Location Card */}
             <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-xl border border-gray-50 flex items-start gap-4 max-w-xs">
-              <div className="bg-[#F3764A] p-3 rounded-xl text-white">
+              <div className="bg-primary p-3 rounded-xl text-white">
                 <MapPin size={24} />
               </div>
               <div>
@@ -169,7 +169,7 @@ interface ContactItemProps {
 function ContactItem({ icon, label, sub }: ContactItemProps) {
   return (
     <div className="flex items-center gap-5">
-      <div className="w-14 h-14 bg-[#F4F0EC] rounded-full flex items-center justify-center text-[#F3764A]">
+      <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-primary">
         {icon}
       </div>
       <div>
@@ -179,3 +179,7 @@ function ContactItem({ icon, label, sub }: ContactItemProps) {
     </div>
   );
 }
+
+
+
+

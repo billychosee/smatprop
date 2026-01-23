@@ -33,10 +33,10 @@ export default function Footer() {
   return (
     <footer className="relative bg-white text-[#4D5053] pt-24 pb-12 px-6 border-t border-gray-100 overflow-hidden">
       {/* BACKGROUND DECORATION - Only visible on mobile for that "creative" touch */}
-      <div className="lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#F4F0EC] rounded-full blur-3xl opacity-50 z-0" />
+      <div className="lg:hidden absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-accent rounded-full blur-3xl opacity-50 z-0" />
 
       {/* DESKTOP DECORATION - Keeps your original desktop look */}
-      <div className="hidden lg:block absolute top-0 right-0 w-75 h-75 bg-[#F4F0EC] rounded-full -mr-20 -mt-20 opacity-50 z-0" />
+      <div className="hidden lg:block absolute top-0 right-0 w-75 h-75 bg-accent rounded-full -mr-20 -mt-20 opacity-50 z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 items-center lg:items-start text-center lg:text-left">
@@ -81,7 +81,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="hover:text-[#F3764A] transition-colors flex items-center justify-center lg:justify-start gap-2 group"
+                    className="hover:text-primary transition-colors flex items-center justify-center lg:justify-start gap-2 group"
                   >
                     {item}
                     <ArrowUpRight
@@ -110,9 +110,9 @@ export default function Footer() {
           {/* 4. CONTACT - Creative Card on Mobile, Standard on Desktop */}
           <div className="w-full lg:w-auto">
             <h3 className="text-2xl font-serif text-secondary mb-8">Contact</h3>
-            <div className="bg-[#F4F0EC] lg:bg-transparent p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-6 flex flex-col items-center lg:items-start">
+            <div className="bg-accent lg:bg-transparent p-8 lg:p-0 rounded-[40px] lg:rounded-none space-y-6 flex flex-col items-center lg:items-start">
               <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
-                <div className="text-[#F3764A]">
+                <div className="text-primary">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -125,19 +125,19 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
-                <div className="text-[#F3764A]">
+                <div className="text-primary">
                   <Phone size={20} />
                 </div>
                 <div>
                   <p className="hidden lg:block text-xs uppercase tracking-widest text-gray-400 mb-1">
                     Call us
                   </p>
-                  <p className="text-secondary font-medium">(+263) 86 8800</p>
+                  <p className="text-secondary font-medium">(+263) 86 880 08361</p>
                 </div>
               </div>
               <div className="w-full h-px bg-gray-200 lg:hidden my-2" />
               <div className="flex items-center gap-3 text-secondary">
-                <Clock size={16} className="text-[#F3764A]" />
+                <Clock size={16} className="text-primary" />
                 <span className="font-bold text-sm">
                   Mon - Fri: 7 AM - 4 PM
                 </span>
@@ -154,10 +154,10 @@ export default function Footer() {
             Rights Reserved
           </p>
           <div className="flex gap-8 text-[15px] text-gray-400 font-bold lg:font-normal">
-            <Link href="#" className="hover:text-[#F3764A] transition">
+            <Link href="#" className="hover:text-primary transition">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-[#F3764A] transition">
+            <Link href="#" className="hover:text-primary transition">
               Terms of Service
             </Link>
           </div>
@@ -169,8 +169,12 @@ export default function Footer() {
 
 function SocialIcon({ icon }: { icon: React.ReactElement }) {
   return (
-    <div className="w-12 h-12 lg:w-10 lg:h-10 flex items-center justify-center bg-white border border-gray-100 rounded-full text-secondary hover:bg-[#F3764A] hover:text-white hover:border-[#F3764A] transition-all cursor-pointer shadow-sm active:scale-95">
+    <div className="w-12 h-12 lg:w-10 lg:h-10 flex items-center justify-center bg-white border border-gray-100 rounded-full text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all cursor-pointer shadow-sm active:scale-95">
       {icon}
     </div>
   );
 }
+
+
+
+

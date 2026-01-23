@@ -46,7 +46,7 @@ export default function About() {
             >
               About SmatProp
             </motion.h1>
-            <p className="text-[#F3764A] font-semibold tracking-widest uppercase">
+            <p className="text-primary font-semibold tracking-widest uppercase">
               Inside Our Mission & Vision
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function About() {
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-stretch">
           <div className="lg:w-1/2 relative flex">
-            <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-[#F4F0EC] w-full min-h-full">
+            <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-accent w-full min-h-full">
               <img
                 src="/a_modern_futuristic_real_estate_scene_set.png"
                 alt="Professional Black woman using digital tablet"
@@ -86,9 +86,9 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-[#F4F0EC] p-8 rounded-[30px] flex flex-col justify-between border-l-4 border-[#F3764A]">
+              <div className="bg-accent p-8 rounded-[30px] flex flex-col justify-between border-l-4 border-primary">
                 <div>
-                  <Target className="text-[#F3764A] mb-4" size={32} />
+                  <Target className="text-primary mb-4" size={32} />
                   <h4 className="font-serif text-xl text-secondary mb-2">
                     Mission
                   </h4>
@@ -101,7 +101,7 @@ export default function About() {
               </div>
               <div className="bg-secondary p-8 rounded-[30px] text-white flex flex-col justify-between">
                 <div>
-                  <Eye className="text-[#F3764A] mb-4" size={32} />
+                  <Eye className="text-primary mb-4" size={32} />
                   <h4 className="font-serif text-xl mb-2">Vision</h4>
                   <p className="text-sm opacity-60 italic">
                     To become Africa’s leading digital property management
@@ -116,7 +116,7 @@ export default function About() {
       </section>
 
       {/* 3. WHAT WE DO PILLARS */}
-      <section className="py-24 px-4 bg-[#F4F0EC]/50 relative z-10">
+      <section className="py-24 px-4 bg-accent/50 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-secondary">
@@ -161,7 +161,7 @@ export default function About() {
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#F3764A]">{item.icon}</div>
+                    <div className="text-primary">{item.icon}</div>
                     <h3 className="text-xl font-serif text-secondary">
                       {item.title}
                     </h3>
@@ -180,7 +180,7 @@ export default function About() {
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[#F3764A] font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
               The SmatProp Advantage
             </p>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-10 leading-tight">
@@ -207,10 +207,10 @@ export default function About() {
               ].map((diff, i) => (
                 <div key={i} className="flex gap-4 group">
                   <div className="mt-1 shrink-0">
-                    <CheckCircle2 className="text-[#F3764A]" size={22} />
+                    <CheckCircle2 className="text-primary" size={22} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-secondary text-lg mb-1 group-hover:text-[#F3764A] transition-colors">
+                    <h4 className="font-bold text-secondary text-lg mb-1 group-hover:text-primary transition-colors">
                       {diff.title}
                     </h4>
                     <p className="text-gray-500 leading-relaxed">{diff.text}</p>
@@ -231,7 +231,7 @@ export default function About() {
 
       {/* 5. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#F4F0EC] rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
+        <div className="bg-accent rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
               Let&apos;s Modernize <br /> Your Property
@@ -242,13 +242,13 @@ export default function About() {
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
               <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
-                <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-[#0D1B3A] transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
+                <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
                   Get a Quote{" "}
-                  <ArrowRight size={18} className="text-[#F3764A]" />
+                  <ArrowRight size={18} className="text-primary" />
                 </button>
               </Link>
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-[#F3764A] shadow-md">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-md">
                   <Phone size={24} />
                 </div>
                 <div className="text-left">
@@ -256,7 +256,7 @@ export default function About() {
                     Call us
                   </p>
                   <p className="font-bold text-secondary text-xl tracking-tighter">
-                    (+263) 86 8800
+                    (+263) 86 880 08361
                   </p>
                 </div>
               </div>
@@ -269,3 +269,7 @@ export default function About() {
     </div>
   );
 }
+
+
+
+

@@ -9,18 +9,14 @@ import {
   Smartphone,
   Zap,
   Phone,
-  Activity,
-  Maximize2,
-  Calendar,
   UserCheck,
   Clock,
-  Layers,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -39,7 +35,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function Bookings() {
+export default function TenantScreening() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -53,11 +49,11 @@ export default function Bookings() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[500px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
-              alt="Seamless Booking System"
+              src="/tenant-screening-hero.svg"
+              alt="Tenant Screening System"
               className="w-full h-full object-cover"
             />
           </div>
@@ -68,10 +64,11 @@ export default function Bookings() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-serif mb-4"
             >
-              Seamless <span className="text-primary">Bookings.</span>
+              Tenant Screening &{" "}
+              <span className="text-primary">Credit Management.</span>
             </motion.h1>
             <p className="text-[#ffffff] font-semibold tracking-widest uppercase mb-8">
-              High-Precision Scheduling for Modern Assets
+              Comprehensive Verification Solutions
             </p>
 
             <motion.div
@@ -81,7 +78,7 @@ export default function Bookings() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Schedule Now"
+                text="Screen Tenants"
                 href="#desktop-preview"
                 variant="primary"
               />
@@ -89,7 +86,7 @@ export default function Bookings() {
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Book a Demo <ArrowRight size={14} />
+                Book Screening Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -113,11 +110,11 @@ export default function Bookings() {
               className="bg-white/90 backdrop-blur-md p-10 shadow-[20px_20px_60px_rgba(0,0,0,0.05)] rounded-2xl border-t border-l border-gray-100"
             >
               <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase block mb-4">
-                Architecture of Efficiency
+                Screening Intelligence
               </span>
               <h3 className="font-serif text-5xl text-secondary leading-[1.1]">
-                Coordinated <br />
-                <span className="text-primary">Movements.</span>
+                Risk <br />
+                <span className="text-primary">Assessment.</span>
               </h3>
             </motion.div>
           </div>
@@ -128,14 +125,14 @@ export default function Bookings() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-[16px] border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)]"
             >
               <img
-                src="/realistic_property_management_software_interface.jpeg"
-                alt="Booking Intelligence Interface"
+                src="/tenant-screening.svg"
+                alt="Tenant Screening Interface"
                 className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/30 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-secondary/30 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
             {/* FLOATING ACTION BADGES */}
@@ -154,28 +151,6 @@ export default function Bookings() {
               </motion.div>
             </div>
 
-            {/* CREATIVE BOTTOM CALLOUT */}
-            <div className="hidden lg:block absolute -bottom-12 -right-12 z-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="bg-secondary text-white px-8 py-10 rounded-3xl shadow-3xl max-w-[340px] border border-white/10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Layers size={20} className="text-primary" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
-                    Multi-Unit Sync
-                  </span>
-                </div>
-                <p className="text-lg font-serif leading-relaxed mb-6">
-                  Experience zero-latency scheduling management across your
-                  entire portfolio with our high-fidelity data engine.
-                </p>
-                <button className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors">
-                  View Smart Calendar <ArrowRight size={12} />
-                </button>
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
@@ -186,7 +161,7 @@ export default function Bookings() {
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
+                src="/mobile-tenant-screening.svg"
                 alt="Mobile Booking Interface"
                 className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.25)] relative z-10"
               />
@@ -197,28 +172,28 @@ export default function Bookings() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
               <Smartphone size={16} />
-              Mobile Ecosystem
+              Mobile Screening
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Bookings at <br />
-              Your <span className="text-primary">Fingertips.</span>
+              Screening on <br />
+              the <span className="text-primary">Go.</span>
             </h2>
             <div className="space-y-8">
               {[
                 {
                   icon: <ShieldCheck />,
-                  title: "Verified Scheduling",
-                  desc: "Every appointment is double-authenticated to prevent double-bookings.",
+                  title: "Instant Checks",
+                  desc: "Perform tenant background checks and credit verification from your mobile device.",
                 },
                 {
-                  icon: <Calendar />,
-                  title: "Live Sync",
-                  desc: "Synchronize your property visits with Google, Outlook, and Apple calendars.",
+                  icon: <UserCheck />,
+                  title: "Risk Profiling",
+                  desc: "Access detailed tenant profiles and risk assessments anytime, anywhere.",
                 },
                 {
                   icon: <Zap />,
-                  title: "Instant Reservations",
-                  desc: "Secure slots and manage move-in dates instantly with one tap.",
+                  title: "Quick Decisions",
+                  desc: "Approve or reject applications with comprehensive data at your fingertips.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5">
@@ -236,7 +211,7 @@ export default function Bookings() {
             </div>
             <div className="mt-12">
               <BrandCTA
-                text="Get the App"
+                text="Download Screening App"
                 href="/download"
                 variant="secondary"
               />
@@ -245,21 +220,21 @@ export default function Bookings() {
         </div>
       </section>
 
-      {/* 4. CONTACT CTA */}
+      {/* 6. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="bg-accent rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
-              Streamline Your <br /> Operations
+              Secure Your <br /> Tenancy Decisions
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              Connect your assets to our intelligent scheduling grid and
-              eliminate the friction of property management.
+              Make informed decisions with comprehensive tenant screening tools
+              and protect your property investments.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
               <Link href="#desktop-preview">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
-                  Setup Smart Scheduler{" "}
+                  Start Screening Now{" "}
                   <ArrowRight size={18} className="text-primary" />
                 </button>
               </Link>

@@ -5,23 +5,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
-  Smartphone,
   Zap,
   Phone,
   Activity,
-  Maximize2,
-  Building2,
-  Boxes,
-  BarChart3,
+
   Globe,
   TrendingUp,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+interface BrandCTAProps {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}
+
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: BrandCTAProps) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -54,7 +55,7 @@ export default function ApiIntegration() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[500px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
               src="/secure_digital_real_estate_marketplace_in_an.jpg"
@@ -127,7 +128,7 @@ export default function ApiIntegration() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-[16px] border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-16 border-secondary bg-secondary"
             >
               <img
                 src="/realistic_property_management_software_interface.jpeg"
@@ -160,7 +161,7 @@ export default function ApiIntegration() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-white px-8 py-10 rounded-3xl shadow-3xl max-w-[340px] border border-gray-100"
+                className="bg-white px-8 py-10 rounded-3xl shadow-3xl max-w-85 border border-gray-100"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Globe size={20} className="text-primary" />
@@ -169,7 +170,8 @@ export default function ApiIntegration() {
                   </span>
                 </div>
                 <p className="text-lg font-serif leading-relaxed mb-6 text-secondary">
-                  Connect with third-party services and ERPs for enhanced functionality.
+                  Connect with third-party services and ERPs for enhanced
+                  functionality.
                 </p>
                 <button className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 text-primary hover:opacity-70 transition-all">
                   API Docs <ArrowRight size={12} />
@@ -240,17 +242,62 @@ export default function ApiIntegration() {
               ))}
             </div>
             <div className="mt-12">
-              <BrandCTA
-                text="View API Docs"
-                href="/docs"
-                variant="secondary"
-              />
+              <BrandCTA text="View API Docs" href="/docs" variant="secondary" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. FINAL CTA */}
+      {/* 4. INTEGRATION LOGOS */}
+      <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-white rounded-[80px] my-20">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
+            Our Integrations
+          </h2>
+          <p className="text-primary font-bold tracking-widest uppercase text-sm">
+            Seamless Connections & Payments
+          </p>
+        </div>
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {[
+            { name: "Ecocash", src: "/Ecocash.svg" },
+            { name: "Omari", src: "/omari.svg" },
+            { name: "Mastercard", src: "/mastercard.svg" },
+            { name: "Zimswitch", src: "/zimswitch.svg" },
+            { name: "Visa", src: "/visa.svg" },
+            { name: "Innbucks", src: "/innbucks.svg" },
+            { name: "Robert Root", src: "/clients-logos/robertroot_logo.png" },
+            { name: "Sharetek", src: "/clients-logos/sharetek_logo.svg" },
+            { name: "Smat Tech", src: "/clients-logos/smatech_logo.svg" },
+            { name: "Smat Pay", src: "/clients-logos/smatpay_logo.svg" },
+            { name: "Ntiyiso", src: "/clients-logos/ntiyiso_logo.svg" },
+            { name: "QuickBooks", src: "/clients-logos/quickbooks-logo.png" },
+            { name: "Sage", src: "/clients-logos/sage-logo.jpg" },
+            { name: "Sasseta", src: "/clients-logos/sasseta_logo.svg" },
+            {
+              name: "Services SETA",
+              src: "/clients-logos/services_seta_logo.svg",
+            },
+            { name: "Smat QR", src: "/clients-logos/smat_qr_logo.svg" },
+            { name: "Smat Tutor", src: "/clients-logos/smat_tutor_logo.svg" },
+            { name: "Xero", src: "/clients-logos/xero-logo.svg" },
+            { name: "Zimra", src: "/clients-logos/zimra-logo.jpeg" },
+          ].map((integration, i) => (
+            <div
+              key={i}
+              className="relative group bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center p-6 transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer aspect-square"
+            >
+              <img
+                src={integration.src}
+                alt={integration.name}
+                className="max-h-full max-w-full object-contain transition-all duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. FINAL CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="bg-primary rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-20 pointer-events-none" />
@@ -259,7 +306,8 @@ export default function ApiIntegration() {
               Ready to Integrate <br /> Your Systems?
             </h2>
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Unlock the power of connected ecosystems with SmatProp's API suite.
+              Unlock the power of connected ecosystems with SmatProp&apos;s API
+              suite.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
               <Link href="#desktop-preview">
@@ -289,6 +337,3 @@ export default function ApiIntegration() {
     </div>
   );
 }
-
-
-

@@ -5,22 +5,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
   Zap,
   Phone,
-  Settings as SettingsIcon,
-  Lock,
+  Activity,
   Bell,
-  Fingerprint,
-  Eye,
   Sliders,
   Database,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+interface BrandCTAProps {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}
+
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: BrandCTAProps) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -39,7 +41,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function Settings() {
+export default function AnalyticsHub() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -57,9 +59,9 @@ export default function Settings() {
           <div className="absolute inset-0 z-0 opacity-20 overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-b from-secondary via-transparent to-secondary z-10" />
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
+              src="/analytics-hub.png"
               alt="System Configuration"
-              className="w-full h-full object-cover scale-110 blur-sm"
+              className="w-full h-full object-cover scale-110"
             />
           </div>
           <div className="relative z-20 text-center text-white px-4">
@@ -68,7 +70,7 @@ export default function Settings() {
               animate={{ opacity: 1, scale: 1 }}
               className="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-3xl mx-auto mb-8 flex items-center justify-center border border-white/20"
             >
-              <SettingsIcon className="text-primary" size={40} />
+              <Activity className="text-primary" size={40} />
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -76,10 +78,10 @@ export default function Settings() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-8xl font-serif mb-6"
             >
-              Control <span className="text-primary">Center.</span>
+              Analytics <span className="text-primary">Hub.</span>
             </motion.h1>
             <p className="text-white/60 font-medium tracking-[0.3em] uppercase mb-10 text-[12px]">
-              Institutional Grade Permissions & Security
+              Occupancy and Revenue Reports
             </p>
 
             <motion.div
@@ -89,15 +91,15 @@ export default function Settings() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Access Portal"
-                href="#desktop-preview"
+                text="Book a Demo"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 variant="primary"
               />
               <Link
-                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                href="#desktop-preview"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white/5 text-white hover:bg-white hover:text-secondary border border-white/20"
               >
-                Security Audit <Lock size={14} className="text-primary" />
+                Explore <Database size={14} className="text-primary" />
               </Link>
             </motion.div>
           </div>
@@ -121,42 +123,42 @@ export default function Settings() {
                 className="bg-white p-8 rounded-3xl shadow-[0_30px_60px_rgba(0,0,0,0.05)] border-t border-gray-100"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-green-50 rounded-2xl text-green-600">
-                    <ShieldCheck size={24} />
+                  <div className="p-3 bg-blue-50 rounded-2xl text-blue-600">
+                    <Activity size={24} />
                   </div>
                   <h4 className="font-bold text-secondary uppercase tracking-widest text-xs">
-                    Security Health
+                    Occupancy Rate
                   </h4>
                 </div>
                 <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden mb-4">
-                  <div className="h-full w-[94%] bg-green-500" />
+                  <div className="h-full w-[87%] bg-blue-500" />
                 </div>
                 <p className="text-sm text-gray-400">
-                  Your system is operating at 94% security efficiency.
-                  Two-factor authentication is active.
+                  Current occupancy stands at 87% across all properties.
+                  Revenue projections are on track.
                 </p>
               </motion.div>
 
               <div className="space-y-6 px-4">
                 <div className="flex gap-4">
-                  <Fingerprint className="text-primary" />
+                  <Database className="text-primary" />
                   <div>
                     <h5 className="font-bold text-secondary text-sm">
-                      Biometric Access
+                      Revenue Analytics
                     </h5>
                     <p className="text-xs text-gray-400">
-                      Encrypted hardware-level security.
+                      Real-time income and expense tracking.
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <Eye className="text-primary" />
+                  <Sliders className="text-primary" />
                   <div>
                     <h5 className="font-bold text-secondary text-sm">
-                      Audit Logging
+                      Custom Reports
                     </h5>
                     <p className="text-xs text-gray-400">
-                      Real-time tracking of all configuration changes.
+                      Generate detailed insights on demand.
                     </p>
                   </div>
                 </div>
@@ -168,11 +170,11 @@ export default function Settings() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.3)] border-12 border-secondary bg-secondary"
+                className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.3)]"
               >
                 <img
-                  src="/realistic_property_management_software_interface.jpeg"
-                  alt="Settings Interface"
+                  src="/analytics-hub.svg"
+                  alt="Analytics Dashboard"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-secondary/10 pointer-events-none" />
@@ -182,14 +184,14 @@ export default function Settings() {
         </div>
       </section>
 
-      {/* --- 3. MOBILE CONFIGURATION ECOSYSTEM --- */}
+      {/* --- 3. MOBILE ANALYTICS ECOSYSTEM --- */}
       <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-gray-50 rounded-[80px] my-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
-                alt="Mobile Settings"
+                src="/mobile-analytics-hub.svg"
+                alt="Mobile Analytics"
                 className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.2)] relative z-10"
               />
               <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]" />
@@ -198,29 +200,29 @@ export default function Settings() {
 
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
-              <Sliders size={16} />
-              Granular Control
+              <Activity size={16} />
+              Real-Time Insights
             </div>
             <h2 className="text-5xl font-serif text-secondary mb-8 leading-tight">
-              Settings That <br />
+              Analytics That <br />
               Follow <span className="text-primary">You.</span>
             </h2>
             <div className="grid grid-cols-1 gap-6">
               {[
                 {
                   icon: <Bell />,
-                  title: "Smart Notifications",
-                  desc: "Configure precise alert triggers for property events.",
+                  title: "Performance Alerts",
+                  desc: "Get notified of key metrics and occupancy changes.",
                 },
                 {
                   icon: <Database />,
-                  title: "Data Sovereignty",
-                  desc: "Manage where and how your property data is stored.",
+                  title: "Revenue Tracking",
+                  desc: "Monitor income streams and financial health on the go.",
                 },
                 {
                   icon: <Zap />,
-                  title: "API Integrations",
-                  desc: "Connect your existing tools to our high-fidelity engine.",
+                  title: "Quick Reports",
+                  desc: "Generate instant reports from your mobile device.",
                 },
               ].map((item, i) => (
                 <div
@@ -249,14 +251,14 @@ export default function Settings() {
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-serif text-white mb-8">
-              Ready to <span className="text-primary">Optimize?</span>
+              Ready to <span className="text-primary">Analyze?</span>
             </h2>
             <p className="text-white/50 text-xl mb-12 max-w-2xl mx-auto">
-              Your system architecture should be as unique as your portfolio.
-              Start configuring your workspace today.
+              Unlock deep insights into your property performance.
+              Start exploring your analytics dashboard today.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <BrandCTA text="Open Settings" href="#" variant="primary" />
+              <BrandCTA text="Book a Demo" href="https://erp.smatechgroup.com/appointly/appointments_public/book" variant="primary" />
               <div className="flex items-center gap-4 text-white/80">
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                   <Phone size={20} />

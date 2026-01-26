@@ -3,7 +3,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo } from "react";
 import {
   ArrowRight,
   Phone,
@@ -46,15 +45,41 @@ const INTEGRATIONS = [
     name: "Smat Pay",
     src: "/clients-logos/smatpay_logo.svg",
   },
+  {
+    name: "Ntiyiso",
+    src: "/clients-logos/ntiyiso_logo.svg",
+  },
+  {
+    name: "QuickBooks",
+    src: "/clients-logos/quickbooks-logo.png",
+  },
+  {
+    name: "Sage",
+    src: "/clients-logos/sage-logo.jpg",
+  },
+  {
+    name: "Sasseta",
+    src: "/clients-logos/sasseta_logo.svg",
+  },
+  {
+    name: "Services SETA",
+    src: "/clients-logos/services_seta_logo.svg",
+  },
+  {
+    name: "Smat Tutor",
+    src: "/clients-logos/smat_tutor_logo.svg",
+  },
+  {
+    name: "Xero",
+    src: "/clients-logos/xero-logo.svg",
+  },
+  {
+    name: "Zimra",
+    src: "/clients-logos/zimra-logo.jpeg",
+  },
 ];
 
 export default function Home() {
-  const shuffledIntegrations = useMemo(
-    // eslint-disable-next-line react-hooks/purity
-    () => [...INTEGRATIONS].sort(() => Math.random() - 0.5),
-    [],
-  );
-
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -188,36 +213,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. OUR CLIENTS */}
-      <section className="py-24 bg-accent/50 overflow-hidden relative z-10">
-        <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
-            Our Integrations
-          </h2>
-          <p className="text-primary font-bold tracking-widest uppercase text-sm">
-            Seamless Connections & Payments
-          </p>
-        </div>
-        <div className="relative flex">
-          <motion.div
-            className="flex gap-12 whitespace-nowrap"
-            animate={{ x: ["0%", "-10%"] }}
-            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-          >
-            {[...shuffledIntegrations, ...shuffledIntegrations].map((integration, i) => (
-              <div
-                key={i}
-                className="relative group w-64 h-32 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center p-6 transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer"
-              >
-                <img
-                  src={integration.src}
-                  alt={integration.name}
-                  className="max-h-full max-w-full object-contain transition-all duration-500"
-                />
-              </div>
-            ))}
-          </motion.div>
-        </div>
+      {/* 3. THE INTEGRATIONS ECOSYSTEM - HEXAGON GRID */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#F8F9FA] rounded-[40px] md:rounded-[60px] p-12 md:p-20 text-center border border-gray-100 shadow-sm overflow-hidden relative"
+        >
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-serif text-secondary mb-6 tracking-tight">
+              Our Intergration
+            </h2>
+            <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+              Seamlessly integrated with 18+ industry leaders to provide a
+              unified property management experience.
+            </p>
+
+            {/* THE 3-ROW HEXAGON GRID */}
+            <div className="flex flex-col gap-6 md:gap-8 items-center">
+              {[
+                INTEGRATIONS.slice(0, 6), // Row 1
+                INTEGRATIONS.slice(6, 12), // Row 2
+                INTEGRATIONS.slice(12, 18), // Row 3
+              ].map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="flex flex-wrap justify-center gap-4 md:gap-6"
+                >
+                  {row.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      className="relative w-24 h-24 md:w-32 md:h-28 bg-white flex items-center justify-center p-4 shadow-md transition-all cursor-pointer"
+                      style={{
+                        clipPath:
+                          "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                      }}
+                    >
+                      {/* Subtle Hexagon Border Inner */}
+                      <div
+                        className="absolute inset-0.5 bg-white"
+                        style={{
+                          clipPath:
+                            "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                        }}
+                      />
+
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className="relative z-10 w-full h-full object-contain p-2"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </motion.div>
       </section>
 
       {/* 4. THE SOLUTION */}
@@ -367,7 +423,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* 8. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="bg-accent rounded-[50px] py-20 px-8 text-center">
@@ -401,7 +456,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-

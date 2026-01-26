@@ -5,22 +5,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  Smartphone,
   Phone,
   Activity,
-  Maximize2,
   Clock,
-  ShieldCheck,
   Search,
-  FileSearch,
-  History,
   AlertCircle,
+  Wrench,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -39,7 +35,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function ActivityLogs() {
+export default function MaintenanceControl() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -53,10 +49,10 @@ export default function ActivityLogs() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[500px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
+              src="/maintenance-control-hero.svg"
               alt="Activity Logs Overview"
               className="w-full h-full object-cover"
             />
@@ -67,10 +63,10 @@ export default function ActivityLogs() {
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-serif mb-4"
             >
-              System <span className="text-primary">Transparency.</span>
+              Maintenance <span className="text-primary">Control.</span>
             </motion.h1>
             <p className="text-[#ffffff] font-semibold tracking-widest uppercase mb-8">
-              Complete Audit Trails & Real-Time Event Tracking
+              Request Submission & Tracking
             </p>
 
             <motion.div
@@ -79,24 +75,24 @@ export default function ActivityLogs() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Analyze Logs"
-                href="#log-preview"
+                text="View Requests"
+                href="#maintenance-preview"
                 variant="primary"
               />
               <Link
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Request Audit Demo <ArrowRight size={14} />
+                Book Maintenance Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 2. BIG IMAGE SECTION - THE LOG ENGINE */}
+      {/* 2. BIG IMAGE SECTION - MAINTENANCE DASHBOARD */}
       <section
-        id="log-preview"
+        id="maintenance-preview"
         className="py-32 px-6 relative z-10 overflow-hidden"
       >
         <div className="max-w-6xl mx-auto relative">
@@ -110,12 +106,12 @@ export default function ActivityLogs() {
               className="bg-white/80 backdrop-blur-md p-10 shadow-[20px_20px_60px_rgba(0,0,0,0.05)] rounded-2xl border-t border-l border-gray-100"
             >
               <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase block mb-4">
-                Institutional Auditing
+                Maintenance Management
               </span>
               <h3 className="font-serif text-5xl text-secondary leading-[1.1]">
-                Immutable <br />
-                Event <br />
-                <span className="text-primary">Intelligence.</span>
+                Streamlined <br />
+                Request <br />
+                <span className="text-primary">Tracking.</span>
               </h3>
             </motion.div>
           </div>
@@ -126,14 +122,14 @@ export default function ActivityLogs() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-[16px] border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)]"
             >
               <img
-                src="/realistic_property_management_software_interface.jpeg"
-                alt="Log Management Interface"
+                src="/maintenance-control.svg"
+                alt="Maintenance Control Interface"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/30 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-secondary/30 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
             {/* FLOATING ACTIVITY BADGES (Creative Add-on) */}
@@ -144,7 +140,7 @@ export default function ActivityLogs() {
               >
                 <div className="w-2 h-2 rounded-full bg-green-500" />
                 <p className="text-[10px] font-bold text-secondary uppercase tracking-tight">
-                  Login: Admin User #04
+                  Request: Plumbing Issue
                 </p>
                 <span className="text-[9px] text-gray-400 ml-auto">2m ago</span>
               </motion.div>
@@ -154,46 +150,24 @@ export default function ActivityLogs() {
               >
                 <div className="w-2 h-2 rounded-full bg-primary" />
                 <p className="text-[10px] font-bold text-secondary uppercase tracking-tight">
-                  Payment: $1,200 Verified
+                  Assigned: Contractor #12
                 </p>
                 <span className="text-[9px] text-gray-400 ml-auto">5m ago</span>
               </motion.div>
             </div>
 
-            {/* CREATIVE BOTTOM CALLOUT */}
-            <div className="hidden lg:block absolute -bottom-12 -right-12 z-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="bg-secondary text-white px-8 py-10 rounded-3xl shadow-3xl max-w-[340px] border border-white/10"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-px w-8 bg-primary" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
-                    Data Integrity
-                  </span>
-                </div>
-                <p className="text-lg font-serif leading-relaxed mb-6">
-                  Every interaction is cryptographically timestamped, ensuring a
-                  tamper-proof history.
-                </p>
-                <button className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors">
-                  View Security Protocols <ArrowRight size={12} />
-                </button>
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* 3. MOBILE APP SECTION (Context: Mobile Alerts) */}
+      {/* 3. MOBILE APP SECTION (Context: Mobile Maintenance) */}
       <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-gray-50/50 rounded-[80px] my-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
-                alt="Mobile Alerts"
+                src="/mobile-maintenance-control.svg"
+                alt="Mobile Maintenance"
                 className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.25)] relative z-10"
               />
               <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
@@ -203,28 +177,28 @@ export default function ActivityLogs() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
               <Activity size={16} />
-              Mobile Monitoring
+              Mobile Maintenance
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Real-Time <br />
-              System <span className="text-primary">Pulse.</span>
+              On-the-Go <br />
+              Request <span className="text-primary">Management.</span>
             </h2>
             <div className="space-y-8">
               {[
                 {
                   icon: <Clock />,
-                  title: "Instant Push Alerts",
-                  desc: "Get notified the second a high-priority event occurs on your property.",
+                  title: "Instant Notifications",
+                  desc: "Receive alerts for new maintenance requests and status updates.",
                 },
                 {
                   icon: <Search />,
-                  title: "Remote Log Search",
-                  desc: "Filter through months of data in seconds directly from your phone.",
+                  title: "Quick Access",
+                  desc: "View and manage all maintenance requests from your mobile device.",
                 },
                 {
                   icon: <AlertCircle />,
-                  title: "Anomalous Detection",
-                  desc: "AI-driven logs that highlight unusual activity for immediate review.",
+                  title: "Priority Alerts",
+                  desc: "Urgent issues are highlighted for immediate attention.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5">
@@ -242,7 +216,7 @@ export default function ActivityLogs() {
             </div>
             <div className="mt-12">
               <BrandCTA
-                text="Access Mobile Logs"
+                text="Download Mobile App"
                 href="/download"
                 variant="secondary"
               />
@@ -251,21 +225,69 @@ export default function ActivityLogs() {
         </div>
       </section>
 
-      {/* 4. CONTACT CTA */}
+      {/* 4. FEATURE HIGHLIGHTS */}
+      <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
+            <Wrench size={16} />
+            Maintenance Features
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
+            Comprehensive <br />
+            Work Order <span className="text-primary">Management.</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: "Maintenance Request Submission & Tracking",
+              desc: "Tenants and property managers can easily submit maintenance requests through the platform, with real-time tracking of request status and updates.",
+            },
+            {
+              title: "Automated Assignment to Contractors/Service Providers",
+              desc: "Automatically assign work orders to qualified contractors based on availability, location, and expertise, streamlining the maintenance process.",
+            },
+            {
+              title: "Work Order Status Tracking & Completion Logging",
+              desc: "Monitor the progress of maintenance tasks from initiation to completion, with detailed logs of all actions and communications.",
+            },
+            {
+              title: "Preventive Maintenance Scheduling",
+              desc: "Schedule regular maintenance tasks to prevent issues before they arise, ensuring property longevity and tenant satisfaction.",
+            },
+            {
+              title: "Notifications for Upcoming Maintenance Tasks",
+              desc: "Receive automated reminders and notifications for scheduled maintenance, inspections, and preventive care activities.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white p-8 rounded-[40px] shadow-lg border border-gray-100 hover:shadow-xl transition-all"
+            >
+              <h4 className="font-bold text-secondary text-lg mb-4 uppercase tracking-wider">
+                {item.title}
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. CONTACT CTA */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="bg-accent rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
-              Secure Your <br /> Audit History
+              Streamline Your <br /> Maintenance Workflow
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              Never lose track of a single event. Upgrade to SmatProp's advanced
-              activity logging for ultimate accountability.
+              Keep your properties in top condition. Automate maintenance
+              requests and ensure timely resolutions with SmatProp.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="#log-preview">
+              <Link href="#maintenance-preview">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
-                  Explore Log Engine{" "}
+                  Explore Maintenance Control{" "}
                   <ArrowRight size={18} className="text-primary" />
                 </button>
               </Link>
@@ -291,7 +313,3 @@ export default function ActivityLogs() {
     </div>
   );
 }
-
-
-
-

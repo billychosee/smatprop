@@ -5,12 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  Smartphone,
-  Zap,
   Phone,
-  Activity,
-  Maximize2,
-  Wrench,
   HardHat,
   Cpu,
   BellRing,
@@ -20,7 +15,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -39,7 +34,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function Maintenance() {
+export default function ContractDocument() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -53,7 +48,7 @@ export default function Maintenance() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[500px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
               src="/secure_digital_real_estate_marketplace_in_an.jpg"
@@ -68,10 +63,10 @@ export default function Maintenance() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-serif mb-4"
             >
-              Predictive <span className="text-primary">Care.</span>
+              Contract & <span className="text-primary">Document.</span>
             </motion.h1>
             <p className="text-[#ffffff] font-semibold tracking-widest uppercase mb-8">
-              Automated Maintenance & Asset Longevity
+              Digital Document Management & Compliance
             </p>
 
             <motion.div
@@ -81,15 +76,15 @@ export default function Maintenance() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Open Command Center"
+                text="Explore Documents"
                 href="#desktop-preview"
                 variant="primary"
               />
               <Link
-                href="/contact"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Dispatch Technician <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -126,7 +121,7 @@ export default function Maintenance() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-[16px] border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-16 border-secondary bg-secondary"
             >
               <img
                 src="/realistic_property_management_software_interface.jpeg"
@@ -160,7 +155,7 @@ export default function Maintenance() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-secondary text-white px-8 py-10 rounded-3xl shadow-3xl max-w-[340px] border border-white/10"
+                className="bg-secondary text-white px-8 py-10 rounded-3xl shadow-3xl max-w-85 border border-white/10"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Cpu size={20} className="text-primary" />
@@ -197,29 +192,30 @@ export default function Maintenance() {
 
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
-              <HardHat size={16} />
-              Field Force Integration
+              <CheckCircle2 size={16} />
+              Document Management
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Real-Time <br />
-              Asset <span className="text-primary">Health.</span>
+              Secure <br />
+              Contract <span className="text-primary">Handling.</span>
             </h2>
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 gap-8">
               {[
                 {
                   icon: <CheckCircle2 />,
-                  title: "Instant Verification",
-                  desc: "Technicians upload geo-tagged photos to verify completed work orders.",
+                  title: "Lease Agreement Storage",
+                  desc: "Secure storage and version tracking for all lease agreements.",
+                },
+                
+                {
+                  icon: <BellRing />,
+                  title: "Compliance Alerts",
+                  desc: "Automated alerts for expiring compliance documents.",
                 },
                 {
-                  icon: <Activity />,
-                  title: "Vitals Monitoring",
-                  desc: "Track the performance of elevators, HVAC, and power systems live.",
-                },
-                {
-                  icon: <Wrench />,
-                  title: "Inventory Sync",
-                  desc: "Automatically deduct parts from stock as they are used on-site.",
+                  icon: <HardHat />,
+                  title: "Eviction Management",
+                  desc: "Efficient handling of eviction processes and documentation.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5">
@@ -237,8 +233,8 @@ export default function Maintenance() {
             </div>
             <div className="mt-12">
               <BrandCTA
-                text="Download Tech App"
-                href="/download"
+                text="Get Started"
+                href="/contact"
                 variant="secondary"
               />
             </div>
@@ -251,16 +247,16 @@ export default function Maintenance() {
         <div className="bg-accent rounded-[50px] py-20 px-8 text-center overflow-hidden relative">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 leading-tight">
-              Maintain Without <br /> the Headache
+              Manage Documents <br /> Effortlessly
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              Reduce downtime by 40% with automated work-order triage and
-              intelligent technician dispatch.
+              Streamline contract management, digital signing, and compliance
+              with our comprehensive document solutions.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
               <Link href="#desktop-preview">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-primary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
-                  Activate Command Center{" "}
+                  Explore Document Tools{" "}
                   <ArrowRight size={18} className="text-primary" />
                 </button>
               </Link>

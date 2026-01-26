@@ -4,7 +4,7 @@
 <rect x="101" y="66.8203" width="741.32" height="471.36" fill="url(#pattern1_2068_186)"/>
 <rect x="193.523" y="176.686" width="557.103" height="302.054" fill="url(#pattern2_2068_186)"/>
 <rect x="193.523" y="119.98" width="556.417" height="301.682" fill="url(#pattern3_2068_186)"/>
-<path d="M194 393H745V479H301.626V456.616H194V393Z" fill="white"/>
+<path d="M193.523 392.873H749.94V479.112H302.208V456.666H193.523V392.873Z" fill="white"/>
 </g>
 <defs>
 <pattern id="pattern0_2068_186" patternContentUnits="objectBoundingBox" width="1" height="1">

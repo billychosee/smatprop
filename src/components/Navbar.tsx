@@ -1,4 +1,3 @@
- 
 "use client";
 
 import { useState, useEffect } from "react";
@@ -15,7 +14,6 @@ import {
   Wallet,
   Wrench,
   ClipboardCheck,
-  Fingerprint,
   Bell,
   Zap,
   Megaphone,
@@ -38,99 +36,127 @@ export default function Navbar() {
 
   const [activePreview, setActivePreview] = useState(defaultPreview);
 
-  // All 13 features in order
+  // All 15 features in order
   const allFeatures = [
     {
-      name: "Property & Unit",
-      icon: Home,
-      href: "/features/property-unit",
-      desc: "Property database & categorization (Residential, Commercial, etc.)",
-      img: "/property-and-units-nav.png",
+      title: "Management",
+      features: [
+        {
+          name: "Property & Unit",
+          icon: Home,
+          href: "/features/property-unit",
+          desc: "Property database & categorization",
+          img: "/property-and-units-nav.png",
+        },
+        {
+          name: "Tenant & Lease",
+          icon: Users,
+          href: "/features/tenant-lease",
+          desc: "Tenant profiles & contact details",
+          img: "/tenants-and-lease-nav.png",
+        },
+        {
+          name: "Financial Management",
+          icon: Wallet,
+          href: "/features/financial-management",
+          desc: "Invoicing & billing",
+          img: "/financial-management-nav.png",
+        },
+        {
+          name: "Income & Expense",
+          icon: Wallet,
+          href: "/features/income-expense",
+          desc: "Property income tracking",
+          img: "/income-and-expense-nav.png",
+        },
+        {
+          name: "Analytics Hub",
+          icon: Activity,
+          href: "/features/analytics-hub",
+          desc: "Occupancy and revenue reports",
+          img: "/analytics-hub-nav.png",
+        },
+      ],
     },
     {
-      name: "Tenant & Lease",
-      icon: Users,
-      href: "/features/tenant-lease",
-      desc: "Tenant profiles & contact details",
-      img: "/tenants-and-lease-nav.png",
+      title: "Ecosystem",
+      features: [
+        {
+          name: "Marketing Tools",
+          icon: Megaphone,
+          href: "/features/marketing-tools",
+          desc: "Online property listings",
+          img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+        },
+        {
+          name: "Service Ecosystem",
+          icon: Globe,
+          href: "/features/service-ecosystem",
+          desc: "Contractor profiles",
+          img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084",
+        },
+        {
+          name: "API & Integration",
+          icon: Zap,
+          href: "/features/api-integration",
+          desc: "Smatpay Payment gateway",
+          img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2074",
+        },
+        {
+          name: "Contract & Document",
+          icon: FileText,
+          href: "/features/contract-document",
+          desc: "Lease agreement storage",
+          img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
+        },
+        {
+          name: "Listing Website",
+          icon: Globe,
+          href: "/listings",
+          desc: "Online property marketplace",
+          img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+        },
+      ],
     },
     {
-      name: "Financial Management",
-      icon: Wallet,
-      href: "/features/financial-management",
-      desc: "Invoicing & billing",
-      img: "/financial-management-nav.png",
-    },
-    {
-      name: "Income & Expense",
-      icon: Wallet,
-      href: "/features/income-expense",
-      desc: "Property income tracking by unit & property",
-      img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011",
-    },
-    {
-      name: "Contract & Document",
-      icon: FileText,
-      href: "/features/contract-document",
-      desc: "Lease agreement storage & version tracking",
-      img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
-    },
-    {
-      name: "Tenant Screening",
-      icon: ClipboardCheck,
-      href: "/features/tenant-screening",
-      desc: "Tenant credit checks & verification",
-      img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070",
-    },
-    {
-      name: "Maintenance Control",
-      icon: Wrench,
-      href: "/features/maintenance-control",
-      desc: "Maintenance request submission & tracking",
-      img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070",
-    },
-    {
-      name: "Communications",
-      icon: Bell,
-      href: "/features/communications",
-      desc: "Tenant/landlord messaging system",
-      img: "https://images.unsplash.com/photo-1577563906417-45a18e029474?q=80&w=2070",
-    },
-    {
-      name: "Analytics Hub",
-      icon: Activity,
-      href: "/features/analytics-hub",
-      desc: "Customizable occupancy and revenue reports",
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070",
-    },
-    {
-      name: "Security & Access",
-      icon: Fingerprint,
-      href: "/smataccess",
-      desc: "Role-based access (Admins, Agents, Tenants)",
-      img: "https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=2036",
-      highlight: true,
-    },
-    {
-      name: "Marketing Tools",
-      icon: Megaphone,
-      href: "/features/marketing-tools",
-      desc: "Online property listings & search functionality",
-      img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
-    },
-    {
-      name: "Service Ecosystem",
-      icon: Globe,
-      href: "/features/service-ecosystem",
-      desc: "Contractor profiles & management",
-      img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084",
-    },
-    {
-      name: "API & Integration",
-      icon: Zap,
-      href: "/features/api-integration",
-      desc: "Smatpay Payment gateway integration",
-      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2074",
+      title: "Operations",
+      features: [
+        {
+          name: "Maintenance Control",
+          icon: Wrench,
+          href: "/features/maintenance-control",
+          desc: "Request submission & tracking",
+          img: "/maintenance-control-nav.png",
+        },
+        {
+          name: "Tenant Screening",
+          icon: ClipboardCheck,
+          href: "/features/tenant-screening",
+          desc: "Credit checks & verification",
+          img: "/tenant-screening-nav.png",
+        },
+        // {
+        //   name: "Security & Access",
+        //   icon: Fingerprint,
+        //   href: "/smataccess",
+        //   desc: "Role-based access control",
+        //   img: "https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=2036",
+        // },
+        {
+          name: "Communications",
+          icon: Bell,
+          href: "/features/communications",
+          desc: "Tenant/landlord messaging",
+          img: "/communication-notifications-nav.png",
+        },
+        // {
+        //   name: "Smataccess",
+        //   icon: Fingerprint,
+        //   href: "/smataccess",
+        //   desc: "Smart access control system",
+        //   img: "https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=2036",
+        // },
+      ],
     },
   ];
 
@@ -182,7 +208,10 @@ export default function Navbar() {
               setActivePreview(defaultPreview);
             }}
           >
-            <Link href="/features" className="flex items-center gap-1 text-[15px] font-semibold py-8 text-secondary hover:text-primary transition-colors">
+            <Link
+              href="/features"
+              className="flex items-center gap-1 text-[15px] font-semibold py-8 text-secondary hover:text-primary transition-colors"
+            >
               Features{" "}
               <ChevronDown
                 size={14}
@@ -198,32 +227,39 @@ export default function Navbar() {
                   exit={{ opacity: 0, y: 15, x: "-50%" }}
                   className="absolute top-[85%] left-1/2 w-275 bg-white rounded-[40px] shadow-2xl border border-gray-100 overflow-hidden flex z-50"
                 >
-                  {/* FLAT 3-COLUMN FEATURE GRID */}
-                  <div className="flex-[2.5] p-12 grid grid-cols-3 gap-x-4 gap-y-1">
-                    {allFeatures.map((item, i) => (
-                      <Link
-                        key={i}
-                        href={item.href}
-                        onMouseEnter={() =>
-                          setActivePreview({
-                            title: item.name,
-                            desc: item.desc,
-                            img: item.img,
-                          })
-                        }
-                        className={`group flex items-center gap-3 p-3 rounded-2xl transition-all ${item.highlight ? "bg-primary/5" : "hover:bg-gray-50"}`}
-                      >
-                        <div
-                          className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${item.highlight ? "bg-primary text-white" : "bg-gray-100 text-secondary group-hover:bg-primary/10 group-hover:text-primary"}`}
-                        >
-                          <item.icon size={16} />
+                  {/* GROUPED FEATURE COLUMNS */}
+                  <div className="flex-[2.5] p-12 flex gap-8">
+                    {allFeatures.map((category, catIndex) => (
+                      <div key={catIndex} className="flex-1">
+                        <h4 className="text-lg font-bold mb-4 text-secondary">{category.title}</h4>
+                        <div className="space-y-2">
+                          {category.features.map((item, i) => (
+                            <Link
+                              key={i}
+                              href={item.href}
+                              onMouseEnter={() =>
+                                setActivePreview({
+                                  title: `${category.title}: ${item.name}`,
+                                  desc: item.desc,
+                                  img: item.img,
+                                })
+                              }
+                              className="group flex items-center gap-3 pt-3 px-0 rounded-2xl transition-all hover:bg-gray-50"
+                            >
+                              <div
+                                className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors bg-gray-100 text-secondary group-hover:bg-primary/10 group-hover:text-primary"
+                              >
+                                <item.icon size={16} />
+                              </div>
+                              <span
+                                className="text-[13px] font-bold tracking-tight text-secondary"
+                              >
+                                {item.name}
+                              </span>
+                            </Link>
+                          ))}
                         </div>
-                        <span
-                          className={`text-[13px] font-bold tracking-tight ${item.highlight ? "text-primary" : "text-secondary"}`}
-                        >
-                          {item.name}
-                        </span>
-                      </Link>
+                      </div>
                     ))}
                   </div>
 
@@ -295,7 +331,3 @@ export default function Navbar() {
     </motion.header>
   );
 }
-
-
-
-

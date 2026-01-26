@@ -184,7 +184,7 @@ export default function FinancialManagement() {
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
+                src="/mobile-financial-management.svg"
                 alt="Mobile Billing Interface"
                 className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.25)] relative z-10"
               />

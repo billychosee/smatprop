@@ -12,12 +12,22 @@ import {
   Users,
   Fingerprint,
   Trello,
+  Award,
+  Star,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA - UNTOUCHED STYLE
-const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -79,7 +89,7 @@ export default function CommunicationNotifications() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Start Messaging"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
@@ -102,21 +112,33 @@ export default function CommunicationNotifications() {
         <div className="max-w-6xl mx-auto relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px] rounded-full -z-10" />
 
-          {/* CREATIVE OVERLAP HEADING */}
-          <div className="hidden lg:block absolute top-10 -left-20 z-20">
+          {/* ARCHITECTURAL HEADER OVERLAY */}
+          <div className="hidden lg:block absolute -top-10 -left-10 z-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-white/80 backdrop-blur-md p-10 shadow-[20px_20px_60px_rgba(0,0,0,0.05)] rounded-2xl border-t border-l border-gray-100"
+              className="bg-white p-8 shadow-[50px_50px_100px_rgba(0,0,0,0.05)] rounded-3xl border-t border-l border-gray-100 max-w-xs"
             >
-              <span className="text-primary font-bold tracking-[0.3em] text-[10px] uppercase block mb-4">
-                Communication Center
-              </span>
-              <h3 className="font-serif text-5xl text-secondary leading-[1.1]">
-                Instant <br />
-                Messaging <br />
-                <span className="text-primary">Hub.</span>
+              <Award className="text-primary mb-6" size={40} />
+              <h3 className="font-serif text-4xl text-secondary mb-4">
+                Integrated Service Ecosystem.
               </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Seamless integration of maintenance, security, insurance, and
+                legal services for comprehensive provider management.
+              </p>
+              <div className="flex items-center gap-2">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star
+                    key={i}
+                    size={12}
+                    className="fill-primary text-primary"
+                  />
+                ))}
+                <span className="text-[10px] font-bold ml-2">
+                  4.9/5 AVG RATING
+                </span>
+              </div>
             </motion.div>
           </div>
 
@@ -316,7 +338,3 @@ export default function CommunicationNotifications() {
     </div>
   );
 }
-
-
-
-

@@ -76,11 +76,11 @@ export default function AnalyticsHub() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-8xl font-serif mb-6"
+              className="text-5xl md:text-7xl font-serif mb-4"
             >
               Analytics <span className="text-primary">Hub.</span>
             </motion.h1>
-            <p className="text-white/60 font-medium tracking-[0.3em] uppercase mb-10 text-[12px]">
+            <p className="text-white font-semibold tracking-widest uppercase mb-8">
               Occupancy and Revenue Reports
             </p>
 
@@ -91,15 +91,15 @@ export default function AnalyticsHub() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Book a Demo"
-                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                text="Explore"
+                href="#desktop-preview"
                 variant="primary"
               />
               <Link
-                href="#desktop-preview"
-                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white/5 text-white hover:bg-white hover:text-secondary border border-white/20"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Explore <Database size={14} className="text-primary" />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -134,8 +134,8 @@ export default function AnalyticsHub() {
                   <div className="h-full w-[87%] bg-blue-500" />
                 </div>
                 <p className="text-sm text-gray-400">
-                  Current occupancy stands at 87% across all properties.
-                  Revenue projections are on track.
+                  Current occupancy stands at 87% across all properties. Revenue
+                  projections are on track.
                 </p>
               </motion.div>
 
@@ -254,11 +254,15 @@ export default function AnalyticsHub() {
               Ready to <span className="text-primary">Analyze?</span>
             </h2>
             <p className="text-white/50 text-xl mb-12 max-w-2xl mx-auto">
-              Unlock deep insights into your property performance.
-              Start exploring your analytics dashboard today.
+              Unlock deep insights into your property performance. Start
+              exploring your analytics dashboard today.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <BrandCTA text="Book a Demo" href="https://erp.smatechgroup.com/appointly/appointments_public/book" variant="primary" />
+              <BrandCTA
+                text="Book a Demo"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                variant="primary"
+              />
               <div className="flex items-center gap-4 text-white/80">
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                   <Phone size={20} />
@@ -279,7 +283,3 @@ export default function AnalyticsHub() {
     </div>
   );
 }
-
-
-
-

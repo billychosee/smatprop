@@ -9,7 +9,6 @@ import {
   Zap,
   Phone,
   Settings as SettingsIcon,
-  Lock,
   Bell,
   Fingerprint,
   Eye,
@@ -53,7 +52,7 @@ export default function Settings() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[550px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-137.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-20 overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-b from-secondary via-transparent to-secondary z-10" />
             <img
@@ -89,15 +88,15 @@ export default function Settings() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Access Portal"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
               <Link
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
-                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white/5 text-white hover:bg-white hover:text-secondary border border-white/20"
+                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Security Audit <Lock size={14} className="text-[#F3764A]" />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>

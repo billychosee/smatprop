@@ -5,23 +5,27 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
   Smartphone,
-  Compass,
   Zap,
   Phone,
   Activity,
-  Maximize2,
   Users,
   Award,
-  Star,
   CheckCircle2,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -40,7 +44,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function ServiceProviders() {
+export default function ThirdPartyServiceProviderManagement() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -54,10 +58,10 @@ export default function ServiceProviders() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[550px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-137.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-20 grayscale">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
+              src="/third-party-service-provider-management-hero.svg"
               alt="Service Providers Network"
               className="w-full h-full object-cover"
             />
@@ -86,13 +90,13 @@ export default function ServiceProviders() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-8xl font-serif mb-6 leading-[1.1]"
+              className="text-5xl md:text-7xl font-serif mb-4"
             >
-              Elite <span className="text-primary">Network.</span>
+              Third-Party{" "}
+              <span className="text-primary">Service Provider Management</span>
             </motion.h1>
-            <p className="text-white/60 font-medium tracking-widest uppercase mb-10 max-w-2xl mx-auto">
-              Connecting institutional assets with certified maintenance, legal,
-              and operational experts.
+            <p className="text-white font-semibold tracking-widest uppercase mb-8">
+              Contractor profiles, scheduling, payments & tenant services.
             </p>
 
             <motion.div
@@ -102,15 +106,15 @@ export default function ServiceProviders() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Find a Pro"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
               <Link
-                href="/become-provider"
-                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white/10 text-white hover:bg-white hover:text-secondary border border-white/20"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Join the Network <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -122,34 +126,22 @@ export default function ServiceProviders() {
         id="desktop-preview"
         className="py-32 px-6 relative z-10 overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative">
           {/* ARCHITECTURAL HEADER OVERLAY */}
-          <div className="hidden lg:block absolute top-0 -left-10 z-20">
+          <div className="hidden lg:block absolute -top-40 -left-10 z-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-white p-12 shadow-[50px_50px_100px_rgba(0,0,0,0.05)] rounded-3xl border-t border-l border-gray-100 max-w-sm"
+              className="bg-white p-8 shadow-[50px_50px_100px_rgba(0,0,0,0.05)] rounded-3xl border-t border-l border-gray-100 max-w-xs"
             >
               <Award className="text-primary mb-6" size={40} />
               <h3 className="font-serif text-4xl text-secondary mb-4">
-                The Gold Standard.
+                Integrated Service Ecosystem.
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Our proprietary vetting algorithm ensures only providers with a
-                98% satisfaction rating remain on the platform.
+                Seamless integration of maintenance, security, insurance, and
+                legal services for comprehensive provider management.
               </p>
-              <div className="flex items-center gap-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star
-                    key={i}
-                    size={12}
-                    className="fill-primary text-primary"
-                  />
-                ))}
-                <span className="text-[10px] font-bold ml-2">
-                  4.9/5 AVG RATING
-                </span>
-              </div>
             </motion.div>
           </div>
 
@@ -159,10 +151,10 @@ export default function ServiceProviders() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="relative rounded-[60px] overflow-hidden shadow-[0_100px_150px_-50px_rgba(13,27,58,0.4)] border-[20px] border-secondary bg-secondary"
+              className="relative rounded-[60px] overflow-hidden shadow-[0_100px_150px_-50px_rgba(13,27,58,0.4)] "
             >
               <img
-                src="/realistic_property_management_software_interface.jpeg"
+                src="/third-party-service-provider-management.svg"
                 alt="Provider Management Dashboard"
                 className="w-full h-full object-cover opacity-90 transition-transform duration-1000"
               />
@@ -174,9 +166,11 @@ export default function ServiceProviders() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                    Provider Status
+                    Integration Status
                   </p>
-                  <p className="text-secondary font-bold">Vetting Complete</p>
+                  <p className="text-secondary font-bold">
+                    Services Integrated
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -200,7 +194,7 @@ export default function ServiceProviders() {
           <div className="relative flex justify-center">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
+                src="/mobile-third-party-service-provider-management.svg"
                 alt="Mobile Dispatch UI"
                 className="w-full h-auto drop-shadow-[0_80px_100px_rgba(0,0,0,0.5)] relative z-10"
               />
@@ -214,25 +208,25 @@ export default function ServiceProviders() {
               Real-Time Dispatch
             </div>
             <h2 className="text-5xl font-serif mb-8 leading-tight">
-              Maintenance <br />
+              Provider Management <br />
               on <span className="text-primary">Autopilot.</span>
             </h2>
             <div className="space-y-10">
               {[
                 {
-                  icon: <ShieldCheck />,
-                  title: "Liability Protection",
-                  desc: "We track insurance and certifications automatically.",
+                  icon: <Users />,
+                  title: "Contractor Profiles & Management",
+                  desc: "Comprehensive profiles and streamlined management of all contractors.",
                 },
                 {
-                  icon: <Compass />,
-                  title: "Smart Matching",
-                  desc: "Our AI pairs the right specialist with the specific issue.",
+                  icon: <Activity />,
+                  title: "Scheduling & Workflow Tracking",
+                  desc: "Efficient scheduling and real-time workflow tracking for providers.",
                 },
                 {
                   icon: <Zap />,
-                  title: "Instant Invoicing",
-                  desc: "Automated billing and payment processing upon task completion.",
+                  title: "Payment Tracking for External Services",
+                  desc: "Automated payment tracking and processing for all external services.",
                 },
               ].map((item, i) => (
                 <div
@@ -262,11 +256,11 @@ export default function ServiceProviders() {
         <div className="bg-accent rounded-[60px] py-24 px-8 relative overflow-hidden">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-5xl md:text-7xl font-serif text-secondary mb-10 leading-[1.1]">
-              Elevate Your <br /> Service Standards
+              Streamline Your <br /> Provider Management
             </h2>
             <p className="text-xl text-gray-500 mb-12">
-              Join a network where professional excellence is the baseline, not
-              the exception.
+              Comprehensive third-party service provider management with
+              seamless integration and tenant experiences.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
               <BrandCTA text="Browse Experts" href="#desktop-preview" />
@@ -292,7 +286,3 @@ export default function ServiceProviders() {
     </div>
   );
 }
-
-
-
-

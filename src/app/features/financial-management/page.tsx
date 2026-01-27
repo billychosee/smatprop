@@ -17,7 +17,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -68,7 +76,7 @@ export default function FinancialManagement() {
               Financial <span className="text-primary">Management.</span>
             </motion.h1>
             <p className="text-[#ffffff] font-semibold tracking-widest uppercase mb-8">
-              Comprehensive Invoicing, Payments & Compliance
+              Invoicing, payments & compliance
             </p>
 
             <motion.div
@@ -78,7 +86,7 @@ export default function FinancialManagement() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Manage Bills"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
@@ -86,7 +94,7 @@ export default function FinancialManagement() {
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                View Ledger <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -298,7 +306,3 @@ export default function FinancialManagement() {
     </div>
   );
 }
-
-
-
-

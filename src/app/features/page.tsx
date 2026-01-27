@@ -31,7 +31,7 @@ export default function Features() {
     {
       title: "1. Property & Unit Management",
       icon: <Home size={24} />,
-      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      img: "/property-and-units-nav.png",
       features: [
         "Property database & categorization (residential, commercial, etc.)",
         "Unit-level details (size, type, amenities, occupancy status)",
@@ -56,7 +56,7 @@ export default function Features() {
     {
       title: "3. Financial Management",
       icon: <Wallet size={24} />,
-      img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2011&auto=format&fit=crop",
+      img: "/financial-management-nav.png",
       features: [
         "Invoicing & billing",
         "Payment processing (cards, mobile money, bank transfers)",
@@ -81,7 +81,7 @@ export default function Features() {
     {
       title: "5. Contract & Document Management",
       icon: <FileText size={24} />,
-      img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop",
+      img: "/contract-document-nav.png",
       features: [
         "Lease agreement storage & version tracking",
         "Digital signing & approval workflows",

@@ -6,12 +6,8 @@ import Link from "next/link";
 import {
   ArrowRight,
   ShieldCheck,
-  Smartphone,
-  Compass,
   Zap,
   Phone,
-  Activity,
-  Maximize2,
   FileText,
   UserCheck,
   MousePointer2,
@@ -53,7 +49,7 @@ export default function Applications() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[500px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
               src="/tenants-and-lease-hero.svg"
@@ -81,7 +77,7 @@ export default function Applications() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Start Application"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
@@ -89,7 +85,7 @@ export default function Applications() {
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                System Demo <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -127,14 +123,14 @@ export default function Applications() {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative rounded-[60px] overflow-hidden shadow-[0_80px_150px_-30px_rgba(13,27,58,0.4)] border-[20px] border-secondary bg-secondary"
+              className="relative rounded-[60px] overflow-hidden shadow-[0_80px_150px_-30px_rgba(13,27,58,0.4)] border-20 border-secondary bg-secondary"
             >
               <img
                 src="/tenants-and-lease.svg"
                 alt="Application Management UI"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-secondary/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
             {/* CREATIVE FLOATING ELEMENTS */}
@@ -159,7 +155,7 @@ export default function Applications() {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-primary text-white px-10 py-12 rounded-[40px] shadow-3xl max-w-[360px]"
+                className="bg-primary text-white px-10 py-12 rounded-[40px] shadow-3xl max-w-90"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <FileText size={24} />

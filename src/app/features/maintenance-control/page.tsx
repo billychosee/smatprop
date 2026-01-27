@@ -75,7 +75,7 @@ export default function MaintenanceControl() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="View Requests"
+                text="Explore"
                 href="#maintenance-preview"
                 variant="primary"
               />
@@ -83,7 +83,7 @@ export default function MaintenanceControl() {
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Book Maintenance Demo <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>

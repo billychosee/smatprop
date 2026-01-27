@@ -33,7 +33,7 @@ export default function About() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-100 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/a_modern_futuristic_real_estate_scene_set.jpeg"
+              src="/analytics-hub-hero.svg"
               alt="Black CEO leading a strategy session"
               className="w-full h-full object-cover"
             />
@@ -59,7 +59,7 @@ export default function About() {
           <div className="lg:w-1/2 relative flex">
             <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-accent w-full min-h-full">
               <img
-                src="/a_modern_futuristic_real_estate_scene_set.png"
+                src="/contract-document.svg"
                 alt="Professional Black woman using digital tablet"
                 className="w-full h-full object-cover"
               />
@@ -139,7 +139,7 @@ export default function About() {
                 title: "Hardware Integration",
                 desc: "Smart property hardware integrations including access control and metering.",
                 icon: <Cpu size={28} />,
-                img: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=2070&auto=format&fit=crop",
+                img: "/devices.png",
               },
               {
                 title: "Advisory Services",
@@ -221,7 +221,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+              src="/professional_real_estate_advisory_scene_in_an.png"
               alt="Black tech professionals discussing software architecture"
               className="rounded-tl-[150px] rounded-br-[150px] shadow-2xl h-150 w-full object-cover"
             />
@@ -243,8 +243,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
               <Link href="https://erp.smatechgroup.com/appointly/appointments_public/book">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm hover:cursor-pointer">
-                  Get a Quote{" "}
-                  <ArrowRight size={18} className="text-primary" />
+                  Get a Quote <ArrowRight size={18} className="text-primary" />
                 </button>
               </Link>
               <div className="flex items-center gap-4">

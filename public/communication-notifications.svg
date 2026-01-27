@@ -6,6 +6,7 @@
 <g filter="url(#filter1_d_2078_1628)">
 <rect x="101" y="143" width="780.224" height="423.028" rx="12.8333" fill="url(#pattern2_2078_1628)" shape-rendering="crispEdges"/>
 </g>
+<rect x="120" y="147" width="671" height="15" fill="#1F2020"/>
 <defs>
 <pattern id="pattern0_2078_1628" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_2078_1628" transform="matrix(0.0013587 0 0 0.00203696 0 -0.207845)"/>

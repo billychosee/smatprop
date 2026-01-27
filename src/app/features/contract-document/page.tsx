@@ -15,7 +15,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -51,7 +59,7 @@ export default function ContractDocument() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
+              src="/contract-document-hero.svg"
               alt="Predictive Maintenance"
               className="w-full h-full object-cover"
             />
@@ -76,7 +84,7 @@ export default function ContractDocument() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Explore Documents"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
@@ -121,10 +129,10 @@ export default function ContractDocument() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-16 border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)]"
             >
               <img
-                src="/realistic_property_management_software_interface.jpeg"
+                src="/contract-document.svg"
                 alt="Maintenance Command Center"
                 className="w-full h-full object-cover grayscale-[0.4] group-hover:grayscale-0 transition-all duration-700"
               />
@@ -176,68 +184,59 @@ export default function ContractDocument() {
         </div>
       </section>
 
-      {/* --- 3. MOBILE TECHNICIAN UI --- */}
+      {/* --- 3. DESKTOP INTERFACE --- */}
       <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-gray-50/50 rounded-[80px] my-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="relative flex justify-center order-2 lg:order-1">
-            <div className="relative w-full max-w-md">
-              <img
-                src="/mobile-ui-property-listing.png"
-                alt="Field App Interface"
-                className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.25)] relative z-10"
-              />
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
-            </div>
-          </div>
+        <div className="relative overflow-hidden rounded-[50px]">
+          <img
+            src="/contract-document-last-section.svg"
+            alt="Desktop Interface"
+            className="w-full h-full object-cover"
+          />
 
-          <div className="order-1 lg:order-2">
-            <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
+          {/* Top Left - Badge and Heading */}
+          <div className="absolute top-90 left-5 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-sm">
+            <div className="flex items-center gap-3 mb-4 text-primary font-bold tracking-widest text-[10px] uppercase">
               <CheckCircle2 size={16} />
               Document Management
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Secure <br />
+            <h2 className="text-3xl md:text-4xl font-serif text-secondary leading-tight">
+              Desktop <br />
               Contract <span className="text-primary">Handling.</span>
             </h2>
-            <div className="grid grid-cols-1 gap-8">
-              {[
-                {
-                  icon: <CheckCircle2 />,
-                  title: "Lease Agreement Storage",
-                  desc: "Secure storage and version tracking for all lease agreements.",
-                },
-                
-                {
-                  icon: <BellRing />,
-                  title: "Compliance Alerts",
-                  desc: "Automated alerts for expiring compliance documents.",
-                },
-                {
-                  icon: <HardHat />,
-                  title: "Eviction Management",
-                  desc: "Efficient handling of eviction processes and documentation.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex gap-5">
-                  <div className="w-12 h-12 shrink-0 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm border border-gray-100">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secondary text-sm uppercase tracking-wider">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+          </div>
+
+          {/* Bottom Left - Description */}
+          <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-md">
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Powerful desktop tools for secure contract handling and document management.
+            </p>
+          </div>
+
+          {/* Top Right - Feature 1 */}
+          <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-sm hover:shadow-2xl transition-shadow">
+            <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+              <CheckCircle2 />
             </div>
-            <div className="mt-12">
-              <BrandCTA
-                text="Get Started"
-                href="/contact"
-                variant="secondary"
-              />
+            <h4 className="font-bold text-secondary text-sm uppercase tracking-wider mb-3">
+              Lease Agreement Storage
+            </h4>
+            <p className="text-gray-500 text-sm leading-relaxed">Secure storage and version tracking for all lease agreements.</p>
+          </div>
+
+          {/* Bottom Right - Feature 2 and CTA */}
+          <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-sm hover:shadow-2xl transition-shadow">
+            <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+              <HardHat />
             </div>
+            <h4 className="font-bold text-secondary text-sm uppercase tracking-wider mb-3">
+              Eviction Management
+            </h4>
+            <p className="text-gray-500 text-sm leading-relaxed mb-4">Efficient handling of eviction processes and documentation.</p>
+            <BrandCTA
+              text="Get Started"
+              href="/contact"
+              variant="secondary"
+            />
           </div>
         </div>
       </section>
@@ -282,7 +281,3 @@ export default function ContractDocument() {
     </div>
   );
 }
-
-
-
-

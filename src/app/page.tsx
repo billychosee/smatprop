@@ -265,7 +265,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-
         </motion.div>
       </section>
 
@@ -367,49 +366,64 @@ export default function Home() {
       </section>
 
       {/* 6. HARDWARE PREVIEW */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="rounded-tl-[150px] rounded-br-[150px] overflow-hidden shadow-2xl relative">
+      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+          {/* LEFT: SVG IMAGE SECTION - Taking 6/10 of the width */}
+          <div className="lg:col-span-6 relative flex justify-center items-center p-4">
             <img
-              src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop"
-              alt="Hardware"
-              className="w-full h-125 object-cover"
+              src="/devices-home.svg"
+              alt="Hardware Ecosystem"
+              /* Removed max-height restrictions to let the SVG expand */
+              className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105"
             />
-            <div className="absolute bottom-8 right-8 bg-white p-6 rounded-2xl shadow-xl border-l-4 border-primary">
-              <Cpu className="text-secondary mb-2" size={32} />
-              <p className="text-secondary font-bold">Smart Hub v2.0</p>
-              <p className="text-xs text-gray-400 uppercase tracking-widest">
+
+            {/* Floating Badge - Adjusted for SVG scale */}
+            <div className="absolute bottom-0 right-0 md:bottom-8 md:right-4 bg-white p-5 rounded-2xl shadow-2xl border-l-4 border-primary z-20">
+              <Cpu className="text-secondary mb-2" size={28} />
+              <p className="text-secondary font-bold text-sm">Smart Hub v2.0</p>
+              <p className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">
                 Proprietary Tech
               </p>
             </div>
           </div>
-          <div>
-            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+
+          {/* RIGHT: TEXT SECTION - Taking 4/10 of the width */}
+          <div className="lg:col-span-4 lg:pl-6">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-3 text-[10px] md:text-xs">
               Why SmatProp
             </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
-              Specifically for Africa
+            <h2 className="text-2xl md:text-4xl font-serif text-secondary mb-6 leading-[1.2]">
+              Specifically for <br /> the African Market
             </h2>
-            <div className="space-y-6">
+
+            <div className="space-y-4">
               {[
-                "Designed specifically for African real estate environments",
-                "Supports local payment systems and regulations",
-                "Combines software, hardware, and consultancy",
-                "Scalable for portfolios of any size",
-                "Focused on transparency, automation, and efficiency",
+                "Designed for African real estate environments",
+                "Supports local payment systems & regulations",
+                "Unified software, hardware, and consultancy",
+                "Scalable for any portfolio size",
+                "Built for transparency and automation",
               ].map((text, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 text-gray-600 font-medium"
+                  className="flex items-start gap-3 text-gray-600 text-sm md:text-base font-medium"
                 >
-                  <CheckCircle2 size={20} className="text-primary" /> {text}
+                  <CheckCircle2
+                    size={16}
+                    className="text-primary shrink-0 mt-1"
+                  />
+                  <span className="leading-tight">{text}</span>
                 </div>
               ))}
             </div>
+
             <Link href="/hardware">
-              <button className="mt-10 bg-secondary text-white px-10 py-5 rounded-2xl flex items-center gap-2 shadow-lg hover:bg-secondary transition-all hover:cursor-pointer">
+              <button className="mt-8 bg-secondary text-white px-8 py-4 rounded-xl flex items-center gap-2 shadow-lg hover:bg-secondary/90 transition-all cursor-pointer group text-xs font-bold uppercase tracking-wider">
                 Explore Hardware{" "}
-                <ArrowRight size={20} className="text-primary" />
+                <ArrowRight
+                  size={16}
+                  className="text-primary group-hover:translate-x-1 transition-transform"
+                />
               </button>
             </Link>
           </div>

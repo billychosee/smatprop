@@ -31,7 +31,7 @@ export default function Navbar() {
   const defaultPreview = {
     title: "SmatProp Platform",
     desc: "A unified ecosystem for modern property management and security.",
-    img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+    img: "/property-and-units-nav.png",
   };
 
   const [activePreview, setActivePreview] = useState(defaultPreview);
@@ -82,39 +82,32 @@ export default function Navbar() {
       title: "Ecosystem",
       features: [
         {
-          name: "Marketing Tools",
+          name: "Marketing & Listing Tools",
           icon: Megaphone,
           href: "/features/marketing-tools",
-          desc: "Online property listings",
-          img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+          desc: "Online property listings & search functionality",
+          img: "/marketing-and-listing-nav.png",
         },
         {
-          name: "Service Ecosystem",
+          name: "Third-Party Service Provider Management",
           icon: Globe,
-          href: "/features/service-ecosystem",
-          desc: "Contractor profiles",
-          img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084",
+          href: "/features/third-party-service-provider-management",
+          desc: "Contractor profiles & management",
+          img: "/third-party-service-provider-management-nav.png",
         },
         {
-          name: "API & Integration",
+          name: "Integration & API Access",
           icon: Zap,
           href: "/features/api-integration",
-          desc: "Smatpay Payment gateway",
-          img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=2074",
+          desc: "Smatpay Payment gateway integration",
+          img: "/integration-nav.png",
         },
         {
           name: "Contract & Document",
           icon: FileText,
           href: "/features/contract-document",
           desc: "Lease agreement storage",
-          img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070",
-        },
-        {
-          name: "Listing Website",
-          icon: Globe,
-          href: "/listings",
-          desc: "Online property marketplace",
-          img: "https://images.unsplash.com/photo-1460472178825-e5240623abe5?q=80&w=2070",
+          img: "/contract-document-nav.png",
         },
       ],
     },
@@ -231,7 +224,9 @@ export default function Navbar() {
                   <div className="flex-[2.5] p-12 flex gap-8">
                     {allFeatures.map((category, catIndex) => (
                       <div key={catIndex} className="flex-1">
-                        <h4 className="text-lg font-bold mb-4 text-secondary">{category.title}</h4>
+                        <h4 className="text-lg font-bold mb-4 text-secondary">
+                          {category.title}
+                        </h4>
                         <div className="space-y-2">
                           {category.features.map((item, i) => (
                             <Link
@@ -246,14 +241,10 @@ export default function Navbar() {
                               }
                               className="group flex items-center gap-3 pt-3 px-0 rounded-2xl transition-all hover:bg-gray-50"
                             >
-                              <div
-                                className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors bg-gray-100 text-secondary group-hover:bg-primary/10 group-hover:text-primary"
-                              >
+                              <div className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors bg-gray-100 text-secondary group-hover:bg-primary/10 group-hover:text-primary">
                                 <item.icon size={16} />
                               </div>
-                              <span
-                                className="text-[13px] font-bold tracking-tight text-secondary"
-                              >
+                              <span className="text-[13px] font-bold tracking-tight text-secondary">
                                 {item.name}
                               </span>
                             </Link>

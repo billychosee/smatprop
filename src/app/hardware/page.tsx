@@ -38,7 +38,7 @@ export default function Hardware() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-112.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/cloud_based_property_management_software_visualized_in_an.jpeg"
+              src="/tenant-screening-hero.svg"
               alt="Smart Building Technology"
               className="w-full h-full object-cover"
             />
@@ -254,7 +254,7 @@ export default function Hardware() {
             <div className="relative">
               <div className="rounded-tr-[150px] rounded-bl-[150px] overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2030&auto=format&fit=crop"
+                  src="/cctv-systems.png"
                   alt="Security Tech"
                   className="w-full h-125 object-cover"
                 />

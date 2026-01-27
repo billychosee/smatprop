@@ -100,11 +100,11 @@ export default function IncomeExpense() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-8xl font-serif mb-4"
+              className="text-5xl md:text-7xl font-serif mb-4"
             >
               Income & <span className="text-primary">Expense.</span>
             </motion.h1>
-            <p className="text-white/70 font-semibold tracking-[0.4em] uppercase mb-8 text-[10px]">
+            <p className="text-white font-semibold tracking-widest uppercase mb-8">
               Comprehensive Financial Tracking & Analytics
             </p>
 
@@ -115,7 +115,7 @@ export default function IncomeExpense() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Explore Features"
+                text="Explore"
                 href="#feature-cards"
                 variant="primary"
               />

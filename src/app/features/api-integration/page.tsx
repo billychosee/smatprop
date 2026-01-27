@@ -8,12 +8,62 @@ import {
   Zap,
   Phone,
   Activity,
-
   Globe,
   TrendingUp,
+  Settings,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const INTEGRATIONS = [
+  { name: "Ecocash", src: "/Ecocash.svg" },
+  { name: "Omari", src: "/omari.svg" },
+  { name: "Mastercard", src: "/mastercard.svg" },
+  { name: "Zimswitch", src: "/zimswitch.svg" },
+  { name: "Visa", src: "/visa.svg" },
+  { name: "Innbucks", src: "/innbucks.svg" },
+  {
+    name: "Robert Root",
+    src: "/clients-logos/robertroot_logo.png",
+  },
+  {
+    name: "Sharetek",
+    src: "/clients-logos/sharetek_logo.svg",
+  },
+  {
+    name: "Smat Tech",
+    src: "/clients-logos/smatech_logo.svg",
+  },
+  {
+    name: "Smat Pay",
+    src: "/clients-logos/smatpay_logo.svg",
+  },
+  {
+    name: "Ntiyiso",
+    src: "/clients-logos/ntiyiso_logo.svg",
+  },
+  {
+    name: "QuickBooks",
+    src: "/clients-logos/quickbooks-logo.png",
+  },
+  {
+    name: "Sage",
+    src: "/clients-logos/sage-logo.jpg",
+  },
+  {
+    name: "Sasseta",
+    src: "/clients-logos/sasseta_logo.svg",
+  },
+
+  {
+    name: "Xero",
+    src: "/clients-logos/xero-logo.svg",
+  },
+  {
+    name: "Zimra",
+    src: "/clients-logos/zimra-logo.jpeg",
+  },
+];
 
 interface BrandCTAProps {
   text: string;
@@ -53,12 +103,40 @@ export default function ApiIntegration() {
         <div className="border-r border-gray-100/30"></div>
       </div>
 
+      {/* FLOATING SETTINGS ICONS */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.1, scale: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute top-20 left-10 text-primary"
+        >
+          <Settings size={40} />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="absolute top-40 right-20 text-primary"
+        >
+          <Settings size={30} />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.1, scale: 1 }}
+          transition={{ delay: 1.4, duration: 1 }}
+          className="absolute bottom-40 left-1/4 text-primary"
+        >
+          <Settings size={35} />
+        </motion.div>
+      </div>
+
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-125 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
+              src="/integration-hero.svg"
               alt="API Integration"
               className="w-full h-full object-cover"
             />
@@ -70,7 +148,7 @@ export default function ApiIntegration() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-serif mb-4"
             >
-              Seamless <span className="text-primary">Integrations.</span>
+              Integration & <span className="text-primary">API Access</span>
             </motion.h1>
             <p className="text-[#ffffff] font-semibold tracking-widest uppercase mb-8">
               Connect, Automate, Scale
@@ -83,15 +161,15 @@ export default function ApiIntegration() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Explore APIs"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
               <Link
-                href="/demo"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                View Integrations <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
@@ -128,10 +206,10 @@ export default function ApiIntegration() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)] border-16 border-secondary bg-secondary"
+              className="relative rounded-[50px] overflow-hidden shadow-[0_80px_120px_-30px_rgba(13,27,58,0.4)]"
             >
               <img
-                src="/realistic_property_management_software_interface.jpeg"
+                src="/integration.svg"
                 alt="API Integration Dashboard"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               />
@@ -157,7 +235,7 @@ export default function ApiIntegration() {
             </div>
 
             {/* BOTTOM CALLOUT */}
-            <div className="hidden lg:block absolute -bottom-12 -left-12 z-20">
+            {/* <div className="hidden lg:block absolute -bottom-12 -left-12 z-20">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +255,8 @@ export default function ApiIntegration() {
                   API Docs <ArrowRight size={12} />
                 </button>
               </motion.div>
-            </div>
+            </div> */}
+
           </div>
         </div>
       </section>
@@ -188,7 +267,7 @@ export default function ApiIntegration() {
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
+                src="/mobile-integration.svg"
                 alt="API Integration Mobile"
                 className="w-full h-auto drop-shadow-[0_40px_80px_rgba(13,27,58,0.25)] relative z-10"
               />
@@ -199,7 +278,7 @@ export default function ApiIntegration() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-widest text-[10px] uppercase">
               <Zap size={16} />
-              API & Integration
+              Integration & API Access
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-8 leading-tight">
               Connect Everything <br />
@@ -209,22 +288,23 @@ export default function ApiIntegration() {
               {[
                 {
                   icon: <Zap />,
-                  title: "Smatpay Payment Gateway",
+                  title: "Smatpay Payment gateway integration",
                   desc: "Secure payment processing with Smatpay integration.",
                 },
                 {
                   icon: <Activity />,
-                  title: "Smart Meter Integration",
+                  title: "Smart Meter integration & Smataccess integration",
                   desc: "Real-time data from smart meters and Smataccess.",
                 },
                 {
                   icon: <Globe />,
-                  title: "ERP Integration",
+                  title:
+                    "ERP integration (if using other platforms like Zerp263)",
                   desc: "Seamless connection with ERPs like Zerp263.",
                 },
                 {
                   icon: <ArrowRight />,
-                  title: "Third-Party API Access",
+                  title: "API access for third-party software integration",
                   desc: "Open APIs for custom software integrations.",
                 },
               ].map((item, i) => (
@@ -248,53 +328,94 @@ export default function ApiIntegration() {
         </div>
       </section>
 
-      {/* 4. INTEGRATION LOGOS */}
-      <section className="py-32 px-6 max-w-7xl mx-auto overflow-hidden bg-white rounded-[80px] my-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-4">
-            Our Integrations
-          </h2>
-          <p className="text-primary font-bold tracking-widest uppercase text-sm">
-            Seamless Connections & Payments
-          </p>
-        </div>
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {[
-            { name: "Ecocash", src: "/Ecocash.svg" },
-            { name: "Omari", src: "/omari.svg" },
-            { name: "Mastercard", src: "/mastercard.svg" },
-            { name: "Zimswitch", src: "/zimswitch.svg" },
-            { name: "Visa", src: "/visa.svg" },
-            { name: "Innbucks", src: "/innbucks.svg" },
-            { name: "Robert Root", src: "/clients-logos/robertroot_logo.png" },
-            { name: "Sharetek", src: "/clients-logos/sharetek_logo.svg" },
-            { name: "Smat Tech", src: "/clients-logos/smatech_logo.svg" },
-            { name: "Smat Pay", src: "/clients-logos/smatpay_logo.svg" },
-            { name: "Ntiyiso", src: "/clients-logos/ntiyiso_logo.svg" },
-            { name: "QuickBooks", src: "/clients-logos/quickbooks-logo.png" },
-            { name: "Sage", src: "/clients-logos/sage-logo.jpg" },
-            { name: "Sasseta", src: "/clients-logos/sasseta_logo.svg" },
-            {
-              name: "Services SETA",
-              src: "/clients-logos/services_seta_logo.svg",
-            },
-            { name: "Smat QR", src: "/clients-logos/smat_qr_logo.svg" },
-            { name: "Smat Tutor", src: "/clients-logos/smat_tutor_logo.svg" },
-            { name: "Xero", src: "/clients-logos/xero-logo.svg" },
-            { name: "Zimra", src: "/clients-logos/zimra-logo.jpeg" },
-          ].map((integration, i) => (
-            <div
-              key={i}
-              className="relative group bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center p-6 transition-all hover:shadow-xl hover:-translate-y-2 cursor-pointer aspect-square"
+      {/* 3. THE INTEGRATIONS ECOSYSTEM - HEXAGON GRID */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#F8F9FA] rounded-[40px] md:rounded-[60px] p-12 md:p-20 text-center border border-gray-100 shadow-sm overflow-hidden relative"
+        >
+          {/* FLOATING SETTINGS ICONS IN INTEGRATIONS SECTION */}
+          <div className="absolute inset-0 pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, rotate: -10 }}
+              whileInView={{ opacity: 0.1, rotate: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="absolute top-10 left-10 text-primary"
             >
-              <img
-                src={integration.src}
-                alt={integration.name}
-                className="max-h-full max-w-full object-contain transition-all duration-500"
-              />
+              <Settings size={50} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, rotate: 10 }}
+              whileInView={{ opacity: 0.1, rotate: 0 }}
+              transition={{ delay: 0.7, duration: 1 }}
+              className="absolute bottom-10 right-10 text-primary"
+            >
+              <Settings size={40} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 0.1, scale: 1 }}
+              transition={{ delay: 0.9, duration: 1 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary"
+            >
+              <Settings size={60} />
+            </motion.div>
+          </div>
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-serif text-secondary mb-6 tracking-tight">
+              Our Intergration
+            </h2>
+            <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+              Seamlessly integrated with 18+ industry leaders to provide a
+              unified property management experience.
+            </p>
+
+            {/* THE 3-ROW HEXAGON GRID */}
+            <div className="flex flex-col gap-6 md:gap-8 items-center">
+              {[
+                INTEGRATIONS.slice(0, 6), // Row 1
+                INTEGRATIONS.slice(6, 12), // Row 2
+                INTEGRATIONS.slice(12, 18), // Row 3
+              ].map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="flex flex-wrap justify-center gap-4 md:gap-6"
+                >
+                  {row.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      className="relative w-24 h-24 md:w-32 md:h-28 bg-white flex items-center justify-center p-4 shadow-md transition-all cursor-pointer"
+                      style={{
+                        clipPath:
+                          "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                      }}
+                    >
+                      {/* Subtle Hexagon Border Inner */}
+                      <div
+                        className="absolute inset-0.5 bg-white"
+                        style={{
+                          clipPath:
+                            "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                        }}
+                      />
+
+                      <img
+                        src={item.src}
+                        alt={item.name}
+                        className="relative z-10 w-full h-full object-contain p-2"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+
+        </motion.div>
       </section>
 
       {/* 5. FINAL CTA */}

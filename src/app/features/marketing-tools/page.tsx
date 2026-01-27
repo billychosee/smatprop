@@ -9,19 +9,24 @@ import {
   Smartphone,
   Compass,
   Zap,
-  Phone,
-  Activity,
   Maximize2,
   Flame,
   Percent,
-  Timer,
   Gem,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: string;
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -40,7 +45,7 @@ const BrandCTA = ({ text, href, variant = "primary" }: any) => {
   );
 };
 
-export default function PropertyOffers() {
+export default function MarketingTools() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -54,17 +59,17 @@ export default function PropertyOffers() {
 
       {/* 1. HERO HEADER SECTION */}
       <section className="relative pt-6 pb-12 px-4 max-w-7xl mx-auto z-10">
-        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-[550px] flex items-center justify-center">
+        <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-137.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-30 scale-110">
             <img
-              src="/secure_digital_real_estate_marketplace_in_an.jpg"
-              alt="Exclusive Property Offers"
+              src="/marketing-and-listing-hero.svg"
+              alt="Marketing & Listing Tools"
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Animated Glow behind text */}
-          <div className="absolute w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full -top-20 -right-20 animate-pulse" />
+          <div className="absolute w-125 h-125 bg-primary/20 blur-[120px] rounded-full -top-20 -right-20 animate-pulse" />
 
           <div className="relative z-10 text-center text-white px-4">
             <motion.div
@@ -74,7 +79,7 @@ export default function PropertyOffers() {
             >
               <Flame size={14} className="text-primary" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
-                New Opportunities Daily
+                Boost Your Listings
               </span>
             </motion.div>
 
@@ -82,13 +87,12 @@ export default function PropertyOffers() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-serif mb-6"
+              className="text-5xl md:text-7xl font-serif mb-4"
             >
-              Curated <span className="text-primary">Offers.</span>
+              Marketing & <span className="text-primary">Listing Tools</span>
             </motion.h1>
-            <p className="text-white/70 font-medium tracking-widest uppercase mb-12 max-w-xl mx-auto leading-relaxed">
-              Unlocking access to off-market inventory and high-yield real
-              estate assets
+            <p className="text-white font-semibold tracking-widest uppercase mb-8">
+              Property listings, marketplace & promotional tools.
             </p>
 
             <motion.div
@@ -98,22 +102,22 @@ export default function PropertyOffers() {
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
               <BrandCTA
-                text="Browse Flash Deals"
+                text="Explore"
                 href="#desktop-preview"
                 variant="primary"
               />
               <Link
-                href="/demo"
-                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white/5 text-white hover:bg-white hover:text-secondary border border-white/20 backdrop-blur-sm"
+                href="https://erp.smatechgroup.com/appointly/appointments_public/book"
+                className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
               >
-                Investor Portal <ArrowRight size={14} />
+                Book a Demo <ArrowRight size={14} />
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* --- 2. THE MARKETPLACE ENGINE (DESKTOP) --- */}
+      {/* --- 2. THE LISTING PLATFORM (DESKTOP) --- */}
       <section
         id="desktop-preview"
         className="py-32 px-6 relative z-10 overflow-hidden"
@@ -124,15 +128,16 @@ export default function PropertyOffers() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-white/95 backdrop-blur-xl p-8 shadow-[40px_40px_80px_rgba(0,0,0,0.08)] rounded-3xl border border-gray-100 max-w-[280px]"
+              className="bg-white/95 backdrop-blur-xl p-8 shadow-[40px_40px_80px_rgba(0,0,0,0.08)] rounded-3xl border border-gray-100 max-w-70"
             >
               <Gem className="text-primary mb-4" size={32} />
               <h4 className="text-2xl font-serif text-secondary mb-3">
-                Premium Only.
+                Centralized Marketplace.
               </h4>
               <p className="text-sm text-gray-400 leading-relaxed">
-                We filter out the noise. Only the top 2% of market listings
-                qualify for our "Offers" badge.
+                Connect landlords and tenants in one unified platform.
+                Streamlined listings with advanced search and promotional
+                features.
               </p>
             </motion.div>
           </div>
@@ -143,7 +148,7 @@ export default function PropertyOffers() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative rounded-[60px] overflow-hidden shadow-[0_100px_150px_-50px_rgba(13,27,58,0.5)] border-[12px] border-secondary"
+              className="relative rounded-[60px] overflow-hidden shadow-[0_100px_150px_-50px_rgba(13,27,58,0.5)]"
             >
               <div className="absolute top-0 left-0 right-0 h-12 bg-secondary flex items-center px-8 gap-2">
                 <div className="w-2 h-2 rounded-full bg-red-500/50" />
@@ -151,8 +156,8 @@ export default function PropertyOffers() {
                 <div className="w-2 h-2 rounded-full bg-green-500/50" />
               </div>
               <img
-                src="/realistic_property_management_software_interface.jpeg"
-                alt="Marketplace Interface"
+                src="/marketing-and-listing.svg"
+                alt="Listing Platform Interface"
                 className="w-full h-full object-cover pt-4 transition-transform duration-1000"
               />
             </motion.div>
@@ -164,17 +169,17 @@ export default function PropertyOffers() {
                 className="bg-secondary text-white p-8 rounded-[40px] shadow-3xl border border-white/10"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <Timer className="text-primary animate-spin-slow" />
+                  <Maximize2 className="text-primary" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
-                    Closing Soon
+                    Featured Listing
                   </span>
                 </div>
-                <p className="text-3xl font-serif mb-2">Unit 14B</p>
+                <p className="text-3xl font-serif mb-2">Luxury Apartment</p>
                 <p className="text-sm text-white/50 mb-6 font-mono">
-                  Current Bid: $1.2M
+                  $2,500/month
                 </p>
                 <button className="w-full py-3 bg-primary rounded-xl text-[10px] font-bold uppercase tracking-widest">
-                  Place Deposit
+                  View Details
                 </button>
               </motion.div>
             </div>
@@ -182,14 +187,14 @@ export default function PropertyOffers() {
         </div>
       </section>
 
-      {/* --- 3. THE MOBILE EXPERIENCE --- */}
+      {/* --- 3. THE MOBILE LISTING EXPERIENCE --- */}
       <section className="py-32 px-6 max-w-7xl mx-auto bg-accent/50 rounded-[100px] my-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="relative flex justify-center order-2 lg:order-1">
             <div className="relative w-full max-w-md">
               <img
-                src="/mobile-ui-property-listing.png"
-                alt="Mobile Offers App"
+                src="/mobile-marketing-and-listing.svg"
+                alt="Mobile Listing App"
                 className="w-full h-auto drop-shadow-[0_60px_100px_rgba(13,27,58,0.2)] relative z-10"
               />
               {/* Artistic Circle behind phone */}
@@ -200,34 +205,34 @@ export default function PropertyOffers() {
           <div className="order-1 lg:order-2">
             <div className="flex items-center gap-3 mb-6 text-primary font-bold tracking-[0.3em] text-[10px] uppercase">
               <Smartphone size={16} />
-              Mobile Liquidity
+              Mobile Listings
             </div>
             <h2 className="text-5xl md:text-6xl font-serif text-secondary mb-8 leading-[1.1]">
-              Deals that <br />
-              Don't <span className="text-primary">Wait.</span>
+              Listings that <br />
+              <span className="text-primary">Attract.</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
                   icon: <ShieldCheck />,
-                  title: "Escrow Integration",
-                  desc: "Safe, secure, and instant deposits directly from the app.",
+                  title: "Online Property Listings",
+                  desc: "Create and manage comprehensive property listings online with ease.",
                 },
                 {
                   icon: <Percent />,
-                  title: "Price Alerts",
-                  desc: "Get pinged the second a watched asset drops in price.",
+                  title: "Advanced Search Functionality",
+                  desc: "Powerful search tools to help tenants find the perfect property.",
                 },
                 {
                   icon: <Compass />,
-                  title: "Virtual Tours",
-                  desc: "4K walk-throughs for every single offer on the platform.",
+                  title: "Centralized Marketplace",
+                  desc: "Unified platform connecting landlords and tenants seamlessly.",
                 },
                 {
                   icon: <Zap />,
-                  title: "1-Tap Inquiries",
-                  desc: "Direct line to property owners and specialized brokers.",
+                  title: "Featured Listings & Promotions",
+                  desc: "Highlight your properties with featured listings and promotional tools.",
                 },
               ].map((item, i) => (
                 <div key={i} className="group">
@@ -255,17 +260,16 @@ export default function PropertyOffers() {
 
           <div className="relative z-10">
             <h2 className="text-5xl md:text-7xl font-serif text-white mb-8">
-              Claim Your{" "}
-              <span className="italic text-primary">Advantage.</span>
+              Maximize Your <span className="italic text-primary">Reach.</span>
             </h2>
             <p className="text-white/60 text-xl mb-12 max-w-2xl mx-auto">
-              Ready to see the exclusive inventory your competitors haven't
-              found yet?
+              Ready to attract more tenants with powerful marketing and listing
+              tools?
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
               <button className="bg-primary text-white px-16 py-7 rounded-2xl font-bold uppercase tracking-widest text-[12px] hover:scale-105 transition-all shadow-2xl">
-                Unlock Private Offers
+                Start Listing Now
               </button>
 
               <div className="flex items-center gap-6 text-left border-l border-white/10 pl-8">
@@ -287,7 +291,3 @@ export default function PropertyOffers() {
     </div>
   );
 }
-
-
-
-

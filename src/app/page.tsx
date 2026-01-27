@@ -61,14 +61,7 @@ const INTEGRATIONS = [
     name: "Sasseta",
     src: "/clients-logos/sasseta_logo.svg",
   },
-  {
-    name: "Services SETA",
-    src: "/clients-logos/services_seta_logo.svg",
-  },
-  {
-    name: "Smat Tutor",
-    src: "/clients-logos/smat_tutor_logo.svg",
-  },
+
   {
     name: "Xero",
     src: "/clients-logos/xero-logo.svg",

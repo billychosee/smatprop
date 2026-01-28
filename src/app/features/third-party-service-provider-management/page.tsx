@@ -107,7 +107,7 @@ export default function ThirdPartyServiceProviderManagement() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -263,7 +263,7 @@ export default function ThirdPartyServiceProviderManagement() {
               seamless integration and tenant experiences.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <BrandCTA text="Browse Experts" href="#desktop-preview" />
+              <BrandCTA text="Browse Experts" href="/contact" />
               <div className="flex items-center gap-5 text-left bg-white px-8 py-4 rounded-2xl shadow-sm border border-gray-100">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
                   <Phone size={20} />

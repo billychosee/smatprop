@@ -79,7 +79,7 @@ export default function TenantScreening() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -212,7 +212,7 @@ export default function TenantScreening() {
             <div className="mt-12">
               <BrandCTA
                 text="Download Screening App"
-                href="/download"
+                href="/contact"
                 variant="secondary"
               />
             </div>
@@ -232,7 +232,7 @@ export default function TenantScreening() {
               and protect your property investments.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="#desktop-preview">
+              <Link href="/contact">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
                   Start Screening Now{" "}
                   <ArrowRight size={18} className="text-primary" />

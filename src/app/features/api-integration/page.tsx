@@ -162,7 +162,7 @@ export default function ApiIntegration() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -322,7 +322,7 @@ export default function ApiIntegration() {
               ))}
             </div>
             <div className="mt-12">
-              <BrandCTA text="View API Docs" href="/docs" variant="secondary" />
+              <BrandCTA text="View API Docs" href="/contact" variant="secondary" />
             </div>
           </div>
         </div>
@@ -431,7 +431,7 @@ export default function ApiIntegration() {
               suite.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="#desktop-preview">
+              <Link href="/contact">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-2xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
                   Start Integrating <ArrowRight size={18} />
                 </button>

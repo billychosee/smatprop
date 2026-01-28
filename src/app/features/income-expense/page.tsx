@@ -116,7 +116,7 @@ export default function IncomeExpense() {
             >
               <BrandCTA
                 text="Explore"
-                href="#feature-cards"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -188,7 +188,7 @@ export default function IncomeExpense() {
                 {feature.desc}
               </p>
 
-              <BrandCTA text="Learn More" href="#" variant="primary" />
+              <BrandCTA text="Learn More" href="/contact" variant="primary" />
             </motion.div>
           ))}
         </div>

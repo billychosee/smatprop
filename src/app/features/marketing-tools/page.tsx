@@ -101,11 +101,7 @@ export default function MarketingTools() {
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
-              <BrandCTA
-                text="Explore"
-                href="#desktop-preview"
-                variant="primary"
-              />
+              <BrandCTA text="Explore" href="/contact" variant="primary" />
               <Link
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
@@ -268,9 +264,11 @@ export default function MarketingTools() {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <button className="bg-primary text-white px-16 py-7 rounded-2xl font-bold uppercase tracking-widest text-[12px] hover:scale-105 transition-all shadow-2xl">
-                Start Listing Now
-              </button>
+              <Link href="/contact">
+                <button className="bg-primary text-white px-16 py-7 rounded-2xl font-bold uppercase tracking-widest text-[12px] hover:scale-105 transition-all shadow-2xl">
+                  Start Listing Now
+                </button>
+              </Link>
 
               <div className="flex items-center gap-6 text-left border-l border-white/10 pl-8">
                 <div>

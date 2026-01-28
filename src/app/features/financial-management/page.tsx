@@ -85,11 +85,7 @@ export default function FinancialManagement() {
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
-              <BrandCTA
-                text="Explore"
-                href="#desktop-preview"
-                variant="primary"
-              />
+              <BrandCTA text="Explore" href="/contact" variant="primary" />
               <Link
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
@@ -258,7 +254,7 @@ export default function FinancialManagement() {
             <div className="mt-12">
               <BrandCTA
                 text="Open Mobile Wallet"
-                href="/download"
+                href="/contact"
                 variant="secondary"
               />
             </div>
@@ -278,7 +274,7 @@ export default function FinancialManagement() {
               to manage your property finances efficiently.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="#desktop-preview">
+              <Link href="/contact">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-primary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
                   Explore Financial Tools{" "}
                   <ArrowRight size={18} className="text-primary" />

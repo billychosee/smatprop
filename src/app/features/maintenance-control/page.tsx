@@ -16,7 +16,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: { text: string; href: string; variant?: "primary" | "secondary" | "outline" }) => {
+const BrandCTA = ({
+  text,
+  href,
+  variant = "primary",
+}: {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+}) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -74,11 +82,7 @@ export default function MaintenanceControl() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col sm:flex-row justify-center gap-6"
             >
-              <BrandCTA
-                text="Explore"
-                href="#maintenance-preview"
-                variant="primary"
-              />
+              <BrandCTA text="Explore" href="/contact" variant="primary" />
               <Link
                 href="https://erp.smatechgroup.com/appointly/appointments_public/book"
                 className="px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg bg-white text-secondary hover:bg-primary hover:text-white border-none"
@@ -155,7 +159,6 @@ export default function MaintenanceControl() {
                 <span className="text-[9px] text-gray-400 ml-auto">5m ago</span>
               </motion.div>
             </div>
-
           </div>
         </div>
       </section>
@@ -217,7 +220,7 @@ export default function MaintenanceControl() {
             <div className="mt-12">
               <BrandCTA
                 text="Download Mobile App"
-                href="/download"
+                href="/contact"
                 variant="secondary"
               />
             </div>
@@ -267,7 +270,9 @@ export default function MaintenanceControl() {
               <h4 className="font-bold text-secondary text-lg mb-4 uppercase tracking-wider">
                 {item.title}
               </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -285,7 +290,7 @@ export default function MaintenanceControl() {
               requests and ensure timely resolutions with SmatProp.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
-              <Link href="#maintenance-preview">
+              <Link href="/contact">
                 <button className="bg-secondary text-white px-12 py-6 rounded-2xl flex items-center gap-3 shadow-xl hover:bg-secondary transition-all font-bold uppercase tracking-widest text-sm cursor-pointer">
                   Explore Maintenance Control{" "}
                   <ArrowRight size={18} className="text-primary" />

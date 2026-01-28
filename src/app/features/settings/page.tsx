@@ -18,8 +18,14 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+type BrandCTAProps = {
+  text: string;
+  href: string;
+  variant?: "primary" | "secondary" | "outline";
+};
+
 // Sleek Brand CTA
-const BrandCTA = ({ text, href, variant = "primary" }: any) => {
+const BrandCTA = ({ text, href, variant = "primary" }: BrandCTAProps) => {
   const base =
     "px-10 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 flex items-center justify-center gap-3 shadow-lg active:scale-95";
   const styles = {
@@ -89,7 +95,7 @@ export default function Settings() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -255,7 +261,7 @@ export default function Settings() {
               Start configuring your workspace today.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <BrandCTA text="Open Settings" href="#" variant="primary" />
+              <BrandCTA text="Open Settings" href="/contact" variant="primary" />
               <div className="flex items-center gap-4 text-white/80">
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                   <Phone size={20} />

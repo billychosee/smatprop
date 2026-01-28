@@ -92,7 +92,7 @@ export default function AnalyticsHub() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link

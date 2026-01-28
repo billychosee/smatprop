@@ -78,7 +78,7 @@ export default function Applications() {
             >
               <BrandCTA
                 text="Explore"
-                href="#desktop-preview"
+                href="/contact"
                 variant="primary"
               />
               <Link
@@ -240,7 +240,7 @@ export default function Applications() {
             <div className="mt-14">
               <BrandCTA
                 text="Download Application App"
-                href="/download"
+                href="/contact"
                 variant="primary"
               />
             </div>
@@ -266,7 +266,7 @@ export default function Applications() {
               with our comprehensive tenant and lease management tools.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-              <Link href="#desktop-preview">
+              <Link href="/contact">
                 <button className="bg-secondary text-white px-14 py-7 rounded-2xl flex items-center gap-4 shadow-2xl hover:bg-primary transition-all font-bold uppercase tracking-[0.2em] text-xs cursor-pointer">
                   Explore Features{" "}
                   <ArrowRight size={20} className="text-primary" />

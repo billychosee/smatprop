@@ -20,6 +20,7 @@ import {
   Globe,
   Users,
   ArrowRight,
+  Smartphone,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -101,6 +102,13 @@ export default function Navbar() {
           href: "/features/api-integration",
           desc: "Smatpay Payment gateway integration",
           img: "/integration-nav.png",
+        },
+        {
+          name: "Mobile & Web Access",
+          icon: Smartphone,
+          href: "/features/applications",
+          desc: "Mobile apps for tenants, landlords, and managers",
+          img: "/devices.png",
         },
         {
           name: "Contract & Document",
@@ -322,3 +330,4 @@ export default function Navbar() {
     </motion.header>
   );
 }
+

@@ -191,9 +191,9 @@ export default function Home() {
           </div>
           <div className="relative">
             <img
-              src="/the-challenge.jpg"
+              src="/the-challenge.png"
               alt="Reviewing data"
-              className="rounded-[60px] shadow-2xl w-full h-125 object-cover"
+              className="w-full h-110 object-cover"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-3xl shadow-2xl border-l-8 border-primary">
               <TrendingUp className="text-primary mb-2" size={40} />

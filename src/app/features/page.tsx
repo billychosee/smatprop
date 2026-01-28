@@ -194,6 +194,26 @@ export default function Features() {
     },
   ];
 
+  const getFeatureHref = (title: string) => {
+    const hrefMap: Record<string, string> = {
+      "1. Property & Unit Management": "/features/property-unit",
+      "2. Tenant & Lease Management": "/features/tenant-lease",
+      "3. Financial Management": "/features/financial-management",
+      "4. Income & Expense Tracking": "/features/income-expense",
+      "5. Contract & Document Management": "/features/contract-document",
+      "6. Tenant Screening & Credit Management": "/features/tenant-screening",
+      "7. Maintenance & Work Order Management": "/features/maintenance-control",
+      "8. Communication & Notifications": "/features/communications",
+      "9. Reporting & Analytics": "/features/analytics-hub",
+      "10. Security & Access Control": "/smataccess",
+      "11. Marketing & Listing Tools": "/features/marketing-tools",
+      "12. Third-Party Service Provider Management": "/features/third-party-service-provider-management",
+      "13. Integration & API Access": "/features/api-integration",
+      "14. Mobile & Web Access": "/features/applications",
+    };
+    return hrefMap[title] || "/features";
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -230,10 +250,10 @@ export default function Features() {
         </div>
       </section>
 
-      {/* 2. DYNAMIC FEATURE GRID (ALL 13 MODULES) */}
+      {/* 2. DYNAMIC FEATURE GRID (FIRST 12 MODULES) */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featureCategories.map((item, i) => (
+          {featureCategories.slice(0, 12).map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -270,13 +290,69 @@ export default function Features() {
                     </li>
                   ))}
                 </ul>
+                <Link href={getFeatureHref(item.title)}>
+                  <div className="inline-flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-[0.2em] mt-6 hover:gap-3 transition-all cursor-pointer">
+                    Learn More <ArrowRight size={14} />
+                  </div>
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* 3. MULTI-DEVICE SECTION - CONTENT UPDATED */}
+      {/* 3. CENTERED FEATURES 13 & 14 */}
+      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {featureCategories.slice(12, 14).map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="group bg-white border border-gray-100 rounded-[40px] overflow-hidden hover:shadow-2xl transition-all duration-500"
+            >
+              <div className="h-56 overflow-hidden relative">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-4 left-4 bg-white p-3 rounded-2xl text-primary shadow-lg">
+                  {item.icon}
+                </div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-xl font-serif text-secondary mb-4">
+                  {item.title}
+                </h3>
+                <ul className="space-y-3 mb-6">
+                  {item.features.map((f, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2 text-[13px] text-gray-500 leading-tight"
+                    >
+                      <Zap
+                        size={14}
+                        className="mt-0.5 text-primary shrink-0"
+                      />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={getFeatureHref(item.title)}>
+                  <div className="inline-flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-[0.2em] mt-6 hover:gap-3 transition-all cursor-pointer">
+                    Learn More <ArrowRight size={14} />
+                  </div>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. MULTI-DEVICE SECTION */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>

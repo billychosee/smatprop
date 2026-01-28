@@ -139,7 +139,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 text-secondary">
                 <Clock size={16} className="text-primary" />
                 <span className="font-bold text-sm">
-                  Mon - Fri: 7 AM - 4 PM
+                  Mon - Fri: 7:30 AM - 4:30 PM
                 </span>
               </div>
             </div>

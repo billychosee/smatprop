@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -12,11 +13,14 @@ import {
   Users,
   CheckCircle2,
   Phone,
+  X,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function About() {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#4D5053] relative">
       <Navbar />
@@ -33,8 +37,8 @@ export default function About() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-100 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-40">
             <img
-              src="/analytics-hub-hero.svg"
-              alt="Black CEO leading a strategy session"
+              src="/home-hero.png"
+              alt="SmatProp Hero Background"
               className="w-full h-full object-cover"
             />
           </div>
@@ -53,16 +57,55 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2. NARRATIVE & MISSION SECTION - UPDATED IMAGE */}
+      {/* 2. NARRATIVE & MISSION SECTION - FLOATING IMAGES */}
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-stretch">
           <div className="lg:w-1/2 relative flex">
-            <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-accent w-full min-h-full">
-              <img
-                src="/contract-document.svg"
-                alt="Professional Black woman using digital tablet"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative w-full h-full min-h-150 lg:min-h-175 flex flex-col justify-center">
+              {/* Float 1 - Top Center (full width/height) */}
+              <motion.button
+                onClick={() => setPreviewImage("/float1.svg")}
+                className="absolute top-8 left-1/2 -translate-x-1/2 w-90 h-60 object-cover rounded-2xl shadow-xl z-10 cursor-pointer touch-manipulation"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <img src="/float1.svg" alt="Float 1" className="w-full h-full object-cover rounded-2xl" />
+              </motion.button>
+              {/* Float 2 - Middle Left (full width/height) */}
+              <motion.button
+                onClick={() => setPreviewImage("/float2.svg")}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-74 h-48 object-cover rounded-xl shadow-lg z-10 cursor-pointer touch-manipulation"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
+                <img src="/float2.svg" alt="Float 2" className="w-full h-full object-cover rounded-xl" />
+              </motion.button>
+              {/* Float 3 - Middle Right (full width/height) */}
+              <motion.button
+                onClick={() => setPreviewImage("/float3.svg")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-78 h-51 object-cover rounded-xl shadow-lg z-10 cursor-pointer touch-manipulation"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ y: [0, -25, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <img src="/float3.svg" alt="Float 3" className="w-full h-full object-cover rounded-xl" />
+              </motion.button>
+              {/* Float 4 - Bottom Center (full width/height) */}
+              <motion.button
+                onClick={() => setPreviewImage("/float4.svg")}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 w-70 h-45 object-cover rounded-xl shadow-lg z-10 cursor-pointer touch-manipulation"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              >
+                <img src="/float4.svg" alt="Float 4" className="w-full h-full object-cover rounded-xl" />
+              </motion.button>
             </div>
           </div>
 
@@ -133,7 +176,7 @@ export default function About() {
                 title: "Prop-Software",
                 desc: "Cloud-based property management software for complete digital automation.",
                 icon: <Settings size={28} />,
-                img: "/cloud_based_property_management_software_visualized_in_an.png",
+                img: "/realistic_property_management_software_interface.jpeg",
               },
               {
                 title: "Hardware Integration",
@@ -145,7 +188,7 @@ export default function About() {
                 title: "Advisory Services",
                 desc: "Expert consultancy services to help you optimize and scale your real estate operations.",
                 icon: <Users size={28} />,
-                img: "/professional_real_estate_advisory_scene_in_an.png",
+                img: "/contract-document.svg",
               },
             ].map((item, i) => (
               <div
@@ -177,54 +220,54 @@ export default function About() {
       </section>
 
       {/* 4. OUR DIFFERENCE */}
-      <section className="py-24 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-4 text-sm">
+      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+          {/* LEFT: IMAGE SECTION - Taking 6/10 of the width */}
+          <div className="lg:col-span-6 relative flex justify-center items-center p-4">
+            <img
+              src="/marketing-and-listing.svg"
+              alt="SmatProp Property Technology"
+              className="w-full h-auto object-contain"
+            />
+            {/* Floating Badge */}
+            <div className="absolute bottom-0 right-0 md:bottom-8 md:right-4 bg-white p-5 rounded-2xl shadow-2xl border-l-4 border-primary z-20">
+              <Cpu className="text-secondary mb-2" size={28} />
+              <p className="text-secondary font-bold text-sm">Smart Hub v2.0</p>
+              <p className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">
+                Proprietary Tech
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT: TEXT SECTION - Taking 4/10 of the width */}
+          <div className="lg:col-span-4 lg:pl-6">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase mb-3 text-[10px] md:text-xs">
               The SmatProp Advantage
             </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-secondary mb-10 leading-tight">
-              What Makes Us <br /> Different
+            <h2 className="text-2xl md:text-4xl font-serif text-secondary mb-6 leading-[1.2]">
+              Specifically for <br /> the African Market
             </h2>
-            <div className="space-y-8">
+
+            <div className="space-y-4">
               {[
-                {
-                  title: "Built with African Markets in Mind",
-                  text: "Localized for the specific economic and urban landscapes of Africa.",
-                },
-                {
-                  title: "Designed for Real Challenges",
-                  text: "Software features that target actual day-to-day operational friction.",
-                },
-                {
-                  title: "Integrated Smart Hardware",
-                  text: "Seamless connectivity with smart access and ultrasonic metering hardware.",
-                },
-                {
-                  title: "Flexible, Modular & Scalable",
-                  text: "A system that grows effortlessly with your property portfolio.",
-                },
-              ].map((diff, i) => (
-                <div key={i} className="flex gap-4 group">
-                  <div className="mt-1 shrink-0">
-                    <CheckCircle2 className="text-primary" size={22} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secondary text-lg mb-1 group-hover:text-primary transition-colors">
-                      {diff.title}
-                    </h4>
-                    <p className="text-gray-500 leading-relaxed">{diff.text}</p>
-                  </div>
+                "Built with African Markets in Mind",
+                "Designed for Real Challenges",
+                "Integrated Smart Hardware",
+                "Flexible, Modular & Scalable",
+                "Localized for the specific economic and urban landscapes of Africa",
+              ].map((text, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 text-gray-600 text-sm md:text-base font-medium"
+                >
+                  <CheckCircle2
+                    size={16}
+                    className="text-primary shrink-0 mt-1"
+                  />
+                  <span className="leading-tight">{text}</span>
                 </div>
               ))}
             </div>
-          </div>
-          <div className="relative">
-            <img
-              src="/professional_real_estate_advisory_scene_in_an.png"
-              alt="Black tech professionals discussing software architecture"
-              className="rounded-tl-[150px] rounded-br-[150px] shadow-2xl h-150 w-full object-cover"
-            />
           </div>
         </div>
       </section>
@@ -264,11 +307,34 @@ export default function About() {
         </div>
       </section>
 
+      {/* Image Preview Modal */}
+      {previewImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setPreviewImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            onClick={() => setPreviewImage(null)}
+          >
+            <X size={32} />
+          </button>
+          <motion.img
+            src={previewImage}
+            alt="Preview"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </motion.div>
+      )}
+
       <Footer />
     </div>
   );
 }
-
-
-
-

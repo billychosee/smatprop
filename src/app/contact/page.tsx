@@ -30,7 +30,7 @@ export default function Contact() {
         <div className="relative overflow-hidden rounded-bl-[100px] md:rounded-bl-[200px] bg-secondary h-87.5 flex items-center justify-center">
           <div className="absolute inset-0 z-0 opacity-20">
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+              src="/property-and-units-hero.png"
               alt="Property Management Office"
               className="w-full h-full object-cover"
             />
